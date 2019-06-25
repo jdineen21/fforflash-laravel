@@ -11,6 +11,11 @@
 |
 */
 
+use App\Champion;
+
 Route::get('/', function () {
-    return view('welcome');
+    $champions = Champion::all();
+    return view('index', compact('champions'));
 });
+
+Route::get('/tier', 'TierListController@index');

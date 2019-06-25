@@ -5,6 +5,7 @@
 /storage/*.key
 /vendor
 /html
+/sqlite
 .env
 .env.backup
 .phpunit.result.cache

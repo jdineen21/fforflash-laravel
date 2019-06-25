@@ -47,27 +47,27 @@
 				<img src="css/images/FFFLogo.jpg"/>
 			</div>
 			<div class="navbar">
-				<a href="" >
+				<a href="/" >
 					<div class="tab">
 						Home
 					</div>
 				</a>
-				<a href="guides" >
+				<a href="/tier" >
 					<div class="tab">
-						Guides
+						Tier List
 					</div>
 				</a>
-				<a href="champion-select" >
+				<a href="/champion-select" >
 					<div class="tab">
 						Champ Select
 					</div>
 				</a>
-				<a href="summoner-info" >
+				<a href="/summoner-info" >
 					<div class="tab">
 						Summoner Info
 					</div>
 				</a>
-				<a href="contact" >
+				<a href="/contact" >
 					<div class="tab">
 						Contact
 					</div>
@@ -87,6 +87,11 @@
             <div class="footer">
                 <h3>League of Legends Champions</h3>
                 <div id="champion_links">
+					@foreach ($champions as $champion)
+
+					<a href="">{{ $champion->name }}</a>
+
+					@endforeach
                     <?php
                     // $myfile = fopen("text/champions.txt", "r") or die("Unable to open file!");
                     // $champs = fread($myfile,filesize("text/champions.txt"));

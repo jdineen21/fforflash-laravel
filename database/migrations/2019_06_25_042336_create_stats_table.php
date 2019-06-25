@@ -14,8 +14,7 @@ class CreateStatsTable extends Migration
     public function up()
     {
         Schema::create('stats', function (Blueprint $table) {
-            $table->bigIncrements('statsId');
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->integer('assists');
             $table->integer('champLevel');
             $table->integer('combatPlayerScore');
@@ -116,6 +115,8 @@ class CreateStatsTable extends Migration
             $table->integer('visionWardsBoughtInGame');
             $table->boolean('win');
             $table->timestamps();
+
+            $table->foreign('participantId')->references('id')->on('participants');
         });
     }
 

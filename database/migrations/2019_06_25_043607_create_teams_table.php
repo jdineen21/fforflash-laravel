@@ -32,6 +32,8 @@ class CreateTeamsTable extends Migration
             $table->integer('vilemawKills');
             $table->string('wins');
             $table->timestamps();
+
+            $table->foreign('gameId')->references('gameId')->on('matches');
         });
     }
 

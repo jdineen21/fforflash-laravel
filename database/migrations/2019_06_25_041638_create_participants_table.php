@@ -15,7 +15,7 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('gameId');
+            $table->integer('gameId');
             $table->integer('championId');
             $table->string('highestAchievedSeasonTier');
             $table->string('accountId');
@@ -23,6 +23,9 @@ class CreateParticipantsTable extends Migration
             $table->integer('spell2Id');
             $table->integer('teamId');
             $table->timestamps();
+
+            $table->foreign('gameId')->references('gameId')->on('matches');
+            $table->foreign('accountId')->references('accountId')->on('players');
         });
     }
 

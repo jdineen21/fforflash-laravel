@@ -15,10 +15,12 @@ class CreateBansTable extends Migration
     {
         Schema::create('bans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('teamId');
+            $table->integer('teamId');
             $table->integer('pickTurn');
             $table->integer('championId');
             $table->timestamps();
+
+            $table->foreign('teamId')->references('teamId')->on('teams');
         });
     }
 

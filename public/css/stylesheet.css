@@ -238,9 +238,9 @@ form {
 
 .new_champion_div {
 	border:2px solid #0d244e;
-	background:url(images/tahmkench.jpg);
+	background:url(../datadragon/img/champion/splash/Yuumi_0.jpg);
 	width:731px;
-	height:104px;
+	height:150px;
 	display:inline-block;
 }
 
@@ -265,7 +265,7 @@ form {
 }
 
 #free_champs_div {
-	margin-top:3px;
+	margin-top:10px;
 }
 
 #free_champs_div h3 {
@@ -278,9 +278,9 @@ form {
 }
 
 #free_champs_img img {
-	margin:3px 5px 5px 0px;
-	width:60px;
-	height:60px;
+	margin:2px 3px 5px 0px;
+	width:50px;
+	height:50px;
 }
 
 /* Search Results */

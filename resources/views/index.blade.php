@@ -38,10 +38,26 @@
         <h3 class="thread_title" >Website Update</h3>
         <div class="thread_cont_wrapper">
             <img src="css/images/FFFLogo.jpg"/>
-            <p>Currently finishing up the foundations of the code for the create your own guide function on the website.</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a metus nulla. 
+                Etiam est arcu, vulputate a pretium suscipit, dictum id dolor. Nulla facilisi. 
+                Maecenas rutrum ligula a nunc gravida laoreet. In facilisis ante eget lorem 
+                consectetur ultrices. Nullam fringilla leo quis dui interdum vestibulum. 
+                Donec hendrerit, eros vitae elementum imperdiet, dui neque efficitur ex, ac mollis 
+                justo est quis felis.
+            </p>
             <br>
-            <p>You can see an exemplar Zed guide by clicking <a href="../guides/zed-guide/">here</a></p>
-            <p>Also you can see an exemplar Corki guide by clicking <a href="../guides/corki-guide/">here</a></p>
+            <p>
+                In molestie mattis tellus ut porta. Aenean consequat justo sed odio consequat aliquam. 
+                Maecenas imperdiet, justo a dignissim aliquam, mi neque suscipit arcu, quis condimentum 
+                magna ex ac nunc. Nulla et luctus justo, eget porta neque. Vivamus iaculis, sapien vitae 
+                tempus commodo, lacus dolor volutpat ex, id condimentum tellus nisl quis lacus. Nunc viverra 
+                consequat eros, eget consequat eros ornare eget. Suspendisse aliquet vestibulum arcu. 
+                Donec enim leo, volutpat quis elementum ac, finibus non lacus. Maecenas et augue non velit 
+                dictum vestibulum non sit amet mi. Nulla id mauris elementum, commodo urna et, ullamcorper 
+                felis. Sed condimentum dictum erat in aliquet. Donec justo est, posuere non ipsum quis, 
+                laoreet ultrices diam.
+            </p>
         </div>
     </div>
     <div class="stan_cont_wrapper">
@@ -52,9 +68,26 @@
         <h3 class="thread_title" >Official Website Launch</h3>
         <div class="thread_cont_wrapper">
             <img src="css/images/FFFLogo.jpg"/>
-            <p>The website is currently up and running but is still under development.</p>
+            <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a metus nulla. 
+                    Etiam est arcu, vulputate a pretium suscipit, dictum id dolor. Nulla facilisi. 
+                    Maecenas rutrum ligula a nunc gravida laoreet. In facilisis ante eget lorem 
+                    consectetur ultrices. Nullam fringilla leo quis dui interdum vestibulum. 
+                    Donec hendrerit, eros vitae elementum imperdiet, dui neque efficitur ex, ac mollis 
+                    justo est quis felis.
+            </p>
             <br>
-            <p>The pages "Guides", "Champ Select" and "Contact". The functionality to login and register are my top priority then I will spend time working on the ability to create guides within the website.</p>
+            <p>
+                In molestie mattis tellus ut porta. Aenean consequat justo sed odio consequat aliquam. 
+                Maecenas imperdiet, justo a dignissim aliquam, mi neque suscipit arcu, quis condimentum 
+                magna ex ac nunc. Nulla et luctus justo, eget porta neque. Vivamus iaculis, sapien vitae 
+                tempus commodo, lacus dolor volutpat ex, id condimentum tellus nisl quis lacus. Nunc viverra 
+                consequat eros, eget consequat eros ornare eget. Suspendisse aliquet vestibulum arcu. 
+                Donec enim leo, volutpat quis elementum ac, finibus non lacus. Maecenas et augue non velit 
+                dictum vestibulum non sit amet mi. Nulla id mauris elementum, commodo urna et, ullamcorper 
+                felis. Sed condimentum dictum erat in aliquet. Donec justo est, posuere non ipsum quis, 
+                laoreet ultrices diam.
+            </p>
         </div>
     </div>
     

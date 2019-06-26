@@ -16,12 +16,12 @@ class CreateParticipantsTable extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('gameId');
-            $table->integer('championId');
-            $table->string('highestAchievedSeasonTier');
+            $table->integer('championId')->nullable();
+            $table->string('highestAchievedSeasonTier')->nullable();
             $table->string('accountId');
-            $table->integer('spell1Id');
-            $table->integer('spell2Id');
-            $table->integer('teamId');
+            $table->integer('spell1Id')->nullable();
+            $table->integer('spell2Id')->nullable();
+            $table->integer('teamId')->nullable();
             $table->timestamps();
 
             $table->foreign('gameId')->references('gameId')->on('matches');

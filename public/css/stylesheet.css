@@ -2,7 +2,7 @@
 
 body {
 	background:#091120 url(images/background.png) repeat top left;
-	background:#FFF url(images/main-bg-pattern.png) repeat top left;
+	background:#000 url(images/main-bg-pattern.png) repeat top left;
 	font-family:'Roboto Condensed', Arial, sans-serif;
 	margin:0;
 }

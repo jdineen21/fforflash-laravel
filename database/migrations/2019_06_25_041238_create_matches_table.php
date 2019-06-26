@@ -23,7 +23,7 @@ class CreateMatchesTable extends Migration
             $table->integer('mapId');
             $table->string('platformId');
             $table->integer('queueId');
-            $table->integer('seasonid');
+            $table->integer('seasonId');
             $table->timestamps();
         });
     }

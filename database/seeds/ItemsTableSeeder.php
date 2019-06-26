@@ -17,7 +17,7 @@ class ItemsTableSeeder extends Seeder
 
         $json = json_decode(file_get_contents($url));
 
-        foreach ($json->data as $key => $value) 
+        foreach ($json->data as $key => $value)
         {
             $data = $json->data->$key;
             $items = new Items();

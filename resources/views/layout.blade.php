@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <head>
 		<title>F For Flash | League of Legends</title>
+		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"> --}}
 		<link rel="stylesheet" href="{{ URL::asset('css/stylesheet.css') }}" type="text/css" />
 		<link rel="shortcut icon" href="css/images/Flash.ico" />
 	</head>
@@ -16,7 +17,7 @@
 		<div class="relative_navbar">
 			<div class="navbar_wrapper">
 				<div class="registration">
-					<a href="http://www.fforflash.com">FForFlash.com</a>
+					<a href="/">FForFlash.com</a>
 				</div>
 				<div class="registration" style="padding-right:0px;">
 					<?php
@@ -106,11 +107,11 @@
                     ?>
                 </div>
                 <div id="info_div">
-                    <h2 style="padding-bottom:10px;">F For Flash Network</h2>
+					<h2>F For Flash</h2>
+					<!--
                     <a href="https://www.facebook.com/fforflash" style="margin-right:15px;">
                         <img src="css/images/facebook.png">Facebook
                     </a>
-                    <!--
                     <a href="https://www.twitter.com/fforflash">
                         <img src="images/twitter.png">Twitter
                     </a>

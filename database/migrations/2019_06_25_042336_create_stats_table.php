@@ -128,6 +128,6 @@ class CreateStatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stats');
+        // Schema::dropIfExists('stats');
     }
 }

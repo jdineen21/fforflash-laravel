@@ -13,7 +13,7 @@ class ItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        $url = 'http://ddragon.leagueoflegends.com/cdn/9.12.1/data/en_US/item.json?api_key='.env('RIOT_API_KEY');
+        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/item.json?api_key='.env('RIOT_API_KEY');
 
         $json = json_decode(file_get_contents($url));
 
@@ -22,6 +22,7 @@ class ItemsTableSeeder extends Seeder
             $data = $json->data->$key;
             $items = new Items();
 
+            $items->key = $key;
             $items->name = $data->name;
             $items->description = $data->description;
             $items->colloq = $data->colloq;

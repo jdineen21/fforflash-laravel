@@ -16,7 +16,7 @@ class CreateChampionsTable extends Migration
         Schema::create('champions', function (Blueprint $table) {
             $table->string('version');
             $table->string('id');
-            $table->bigIncrements('key');
+            $table->integer('key')->primary();
             $table->string('name');
             $table->string('title');
             $table->string('blurb');

@@ -6,6 +6,8 @@
 /vendor
 /html
 /sqlite
+/RiotAPIPython
+
 .env
 .env.backup
 .phpunit.result.cache

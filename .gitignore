@@ -3,6 +3,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/datadragon
 /public/css/images
 /storage/*.key
 /vendor

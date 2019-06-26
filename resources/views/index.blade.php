@@ -16,7 +16,7 @@
                 <h3>Free To Play Champions</h3>
                 <div id="free_champs_img">
                 @foreach ($freeChampions as $champion)
-                    <img src="css/images/championsquares/{{ $champion }}Square.png">
+                    <img src="/datadragon/9.13.1/img/champion/{{ $champion }}.png">
                 @endforeach
                 </div>
             </div>

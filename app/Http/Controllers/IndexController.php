@@ -10,7 +10,6 @@ class IndexController extends Controller
 {
     public function index() 
     {
-        // Champion::where('key', '145')->first()->name;
         $champions = Champion::all();
 
         $url = 'https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='.env('RIOT_API_KEY');
@@ -19,9 +18,8 @@ class IndexController extends Controller
         $freeChampionsIds = $json->freeChampionIds;
 
         $freeChampions = [];
-        //dd($freeChampions);
-        foreach ($freeChampionsIds as $id) {
-            array_push($freeChampions, Champion::where('key', $id)->first()->name);
+        foreach ($freeChampionsIds as $x) {
+            array_push($freeChampions, Champion::where('key', $x)->first()->champId);
         }
 
         return view('index', compact('champions', 'freeChampions'));

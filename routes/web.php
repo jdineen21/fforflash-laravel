@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/main', 'IndexController@index');
+Route::get('/', 'IndexController@index');
 
 Route::get('/tier', 'TierListController@index');

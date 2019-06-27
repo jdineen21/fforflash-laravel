@@ -25,37 +25,38 @@
 			form {
 				padding: 2px;
 				border: 2px solid #0d244e;
-				margin: 0.1em 0 0 0.8em;
+				margin: 0.1em 0 0 0em;
 				height: 2em;
 				float: right;
 				input {
 					padding: 0.44em 0.4em;
-					width: 300px;
+					width: 275px;
 					background: #233148;
 					border: 0px;
 					color: #ffffff;
 					font-size: 1em;
 				}
-				.submit_div {
-					cursor: pointer;
-					float: right;
-					width: 16px;
-					height: 16px;
-					margin: 0.5em 0.5em 0 0.52em;
-					background-image: url(/css/images/magnify_white.png);
-					background-position: 100%;
-					background-repeat: no-repeat;
-					input {
-						border: 0;
-						width: 32px;
-						height: 32px;
-						margin: -8px 0 0 -8px;
-						padding: 0;
-						background: transparent;
-						font-size: 0;
-					}
-				}
 			}
 		}
+	}
+}
+
+.submit_div {
+	cursor: pointer;
+	float: right;
+	width: 16px;
+	height: 16px;
+	margin: 0.5em 0.5em 0 0.52em;
+	background-image: url(/css/images/magnify_white.png);
+	background-position: 100%;
+	background-repeat: no-repeat;
+	input {
+		border: 0;
+		width: 32px;
+		height: 32px;
+		margin: -8px 0 0 -8px;
+		padding: 0;
+		background: transparent;
+		font-size: 0;
 	}
 }

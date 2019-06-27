@@ -1,6 +1,3 @@
-// Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
@@ -12,12 +9,11 @@
 @import 'navbar';
 @import 'relativeNavbar';
 @import 'searchResults';
+@import 'tierTable';
+@import 'squares';
 @import 'thread';
 @import 'topbar';
 @import 'wrapper';
-
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
 
 body {
 	background: #091120 url(/css/images/background.png) repeat top left;
@@ -62,13 +58,13 @@ h2 {
 }
 
 h3  {
-	padding: 0px 5px 0px 5px;
+	padding: 0.2em 0.5em;
 	color: #FFF;
 	margin: 0px;
 	background: #132138;
 	border: 3px solid #0d244e;
 	margin-bottom: 3px;
-	font-weight: normal;
+	font-weight: 500;
 }
 
 h4 {

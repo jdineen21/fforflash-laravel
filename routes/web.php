@@ -16,3 +16,5 @@ Route::get('/', 'IndexController@index');
 Route::get('/tier', 'TierListController@index');
 
 Route::get('/test', 'TestController@index');
+
+Route::get('/archive', 'ArchiveController@index');

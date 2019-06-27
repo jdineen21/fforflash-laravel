@@ -1,0 +1,33 @@
+/* Champion Squares Main Page */
+
+.squares_wrapper {
+    margin-top: 3px;
+    background: #233148;
+    border: 3px solid #0d244e;
+    padding: 0.8em 0.7em 0.7em 1.1em;
+    ul {
+        padding: 0;
+        margin: 0;
+        a {
+            background: #132138;
+            border: 0.1em solid #000000;
+            display: inline-block;
+            margin: -0.1em 0 0 -0.4em;
+            &:hover {
+                background: black;
+            }
+            li {
+                list-style-type: none;
+                padding: 0.4em;
+                img {
+                    height: 7em;
+                    width: 7em;
+                }
+                p {
+                    color: #ffffff;
+                    font-weight: 600;
+                }
+            }
+        }   
+    } 
+}

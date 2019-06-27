@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Champion;
 
-class IndexController extends Controller
+class ArchiveController extends Controller
 {
     public function index() 
     {
-        $champions = Champion::all()->sortBy('name');
+        $champions = Champion::all();
 
         $url = 'https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='.env('RIOT_API_KEY');
         $raw = file_get_contents($url);
@@ -21,7 +21,7 @@ class IndexController extends Controller
         foreach ($freeChampionsIds as $x) {
             array_push($freeChampions, Champion::where('key', $x)->first()->champId);
         }
-        
-        return view('index', compact('champions', 'freeChampions'));
+
+        return view('archive.index', compact('champions', 'freeChampions'));
     }
 }

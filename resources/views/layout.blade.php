@@ -55,20 +55,20 @@
 						<a href="/tier" >Tier List</a>
 					</li>
 					<li>
+						<a href="/summoner-info" >Summoner Info</a>
+						
+					</li>
+					<li>
 						<a href="/champion-select" >Champ Select</a>
 					</li>
 					<li>
-						<a href="/summoner-info" >Summoner Info</a>
+						<a href="/contact" >Contact Us</a>
 					</li>
 					<li>
-						<a href="/contact" >Contact</a>
-					</li>
-					<li class="last">
 						<form action="http://www.fforflash.com/search" method="get">
 							<input type="text" name="query" placeholder="Search This Site" class="textbox">
-							<div class="submit_div">
-								<input type="submit">
-							</div>
+							{{-- Fix submit button --}}
+							{{-- <a href="/search"><div class="submit_div"></div></a> --}}
 						</form>
 					</li>
 				</ul>

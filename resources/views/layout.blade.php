@@ -47,39 +47,31 @@
 				<img src="css/images/FFFLogo.jpg"/>
 			</div>
 			<div class="navbar">
-				<a href="/" >
-					<div class="tab">
-						Home
-					</div>
-				</a>
-				<a href="/tier" >
-					<div class="tab">
-						Tier List
-					</div>
-				</a>
-				<a href="/champion-select" >
-					<div class="tab">
-						Champ Select
-					</div>
-				</a>
-				<a href="/summoner-info" >
-					<div class="tab">
-						Summoner Info
-					</div>
-				</a>
-				<a href="/contact" >
-					<div class="tab">
-						Contact
-					</div>
-				</a>
-				<form id="form" action="http://www.fforflash.com/search" method="get">
-					<div class="form_div">
-						<input type="text" name="query" placeholder="Search This Site" class="textbox">
-						<div class="submit_div">
-							<input type="submit">
-						</div>
-					</div>
-				</form>
+				<ul>
+					<li>
+						<a href="/" >Home</a>
+					</li>
+					<li>
+						<a href="/tier" >Tier List</a>
+					</li>
+					<li>
+						<a href="/champion-select" >Champ Select</a>
+					</li>
+					<li>
+						<a href="/summoner-info" >Summoner Info</a>
+					</li>
+					<li>
+						<a href="/contact" >Contact</a>
+					</li>
+					<li class="last">
+						<form action="http://www.fforflash.com/search" method="get">
+							<input type="text" name="query" placeholder="Search This Site" class="textbox">
+							<div class="submit_div">
+								<input type="submit">
+							</div>
+						</form>
+					</li>
+				</ul>
 			</div>
 			<div class="content">
                 @yield('content')

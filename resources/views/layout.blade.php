@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <head>
 		<title>F For Flash | League of Legends</title>
-		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"> --}}
 		<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css" />
 		<link rel="shortcut icon" href="css/images/Flash.ico" />
 	</head>
@@ -93,18 +92,6 @@
 					<a href="">{{ $champion->name }}</a>
 
 					@endforeach
-                    <?php
-                    // $myfile = fopen("text/champions.txt", "r") or die("Unable to open file!");
-                    // $champs = fread($myfile,filesize("text/champions.txt"));
-                    // fclose($myfile);
-                    
-                    // $champion = explode(":", $champs);
-                    // $lengthArray = (count($champion) - 1);
-                    
-                    // for ($x = 0; $x <= $lengthArray; $x++) {
-                    //     echo '<a href="../guides/' . strtolower($champion[$x]) . '-guide">' . $champion[$x] . '</a>';
-                    // }
-                    ?>
                 </div>
                 <div id="info_div">
 					<h2>F For Flash</h2>

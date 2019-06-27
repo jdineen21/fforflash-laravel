@@ -13,9 +13,11 @@ class ChampionTableSeeder extends Seeder
      */
     public function run() 
     {
-        $url = 'http://ddragon.leagueoflegends.com/cdn/8.24.1/data/en_US/champion.json?api_key='.env('RIOT_API_KEY');
+        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion.json?api_key='.env('RIOT_API_KEY');
 
         $json = json_decode(file_get_contents($url));
+
+        dd($json->data->Zyra);
 
         foreach ($json->data as $key => $value) 
         {
@@ -28,6 +30,11 @@ class ChampionTableSeeder extends Seeder
             $champion->name = $data->name;
             $champion->title = $data->title;
             $champion->blurb = $data->blurb;
+            $champion->info = $data->info;
+            $champion->image = $data->image;
+            $champion->tags = $data->tags;
+            $champion->partype = $data->partype;
+            $champion->stats = $data->stats;
 
             $champion->save();
         }

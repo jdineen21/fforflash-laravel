@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ChampionInfo extends Model
+class Items extends Model
 {
     //
 }

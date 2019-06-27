@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Champion;
+use App\Models\Champions;
 
 class IndexController extends Controller
 {
     public function index() 
     {
-        $champions = Champion::all()->sortBy('name');
+        $champions = Champions::all()->sortBy('name');
 
         $url = 'https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key='.env('RIOT_API_KEY');
         $raw = file_get_contents($url);

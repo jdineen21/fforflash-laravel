@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChampionsInfoTable extends Migration
+class CreateChampionsImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,15 @@ class CreateChampionsInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('champions_info', function (Blueprint $table) {
+        Schema::create('champions_image', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('full');
+            $table->string('sprite');
+            $table->string('group');
+            $table->integer('x');
+            $table->integer('y');
+            $table->integer('w');
+            $table->integer('h');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateChampionsInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('champions_info');
+        Schema::dropIfExists('champions_image');
     }
 }

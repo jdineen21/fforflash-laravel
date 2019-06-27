@@ -15,6 +15,10 @@ class CreateChampionsInfoTable extends Migration
     {
         Schema::create('champions_info', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('attack');
+            $table->integer('defense');
+            $table->integer('magic');
+            $table->integer('difficulty');
             $table->timestamps();
         });
     }

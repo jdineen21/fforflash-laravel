@@ -1,16 +1,23 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Champions extends Model
 {
-    public function info() 
+    public function info()
     {
         return $this->hasOne('App\Models\Champions\Info');
+    }
+
+    public function image()
+    {
         return $this->hasOne('App\Models\Champions\Image');
-        return $this->hasOne('App\Models\Champions\Tags');
+    }
+
+    public function stats() 
+    {
         return $this->hasOne('App\Models\Champions\Stats');
     }
 }

@@ -19,7 +19,7 @@ class IndexController extends Controller
 
         $freeChampions = [];
         foreach ($freeChampionsIds as $x) {
-            array_push($freeChampions, Champion::where('key', $x)->first()->champId);
+            array_push($freeChampions, Champions::where('key', $x)->first()->champId);
         }
         
         return view('index', compact('champions', 'freeChampions'));

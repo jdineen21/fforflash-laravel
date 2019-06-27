@@ -20,6 +20,7 @@ class CreateChampionsTable extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('blurb');
+            $table->string('tags');
             $table->string('partype');
             $table->timestamps();
         });

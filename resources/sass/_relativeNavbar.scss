@@ -1,0 +1,29 @@
+/* Relative Navbar */
+
+.relative_navbar {
+	background:#262626;
+	padding:10px;
+}
+
+.navbar_wrapper {
+	width:50%;
+	display:inline;
+	padding-left:25%;
+}
+
+.navbar_wrapper a {
+	display:inline-block;
+	color:#CBCBC5;
+	margin:0;
+	border-right:1px solid #CBCBC5;
+	padding-right:5px;
+}
+
+.registration {
+	display:inline-block;
+	padding-right:35%;
+}
+
+#end {
+	border:0;
+}

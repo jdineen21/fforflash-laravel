@@ -7,7 +7,7 @@
     <head>
 		<title>F For Flash | League of Legends</title>
 		{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"> --}}
-		<link rel="stylesheet" href="{{ URL::asset('css/stylesheet.css') }}" type="text/css" />
+		<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css" />
 		<link rel="shortcut icon" href="css/images/Flash.ico" />
 	</head>
 </head>

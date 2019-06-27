@@ -1,0 +1,96 @@
+/* Guides */
+
+#champ_img {
+	float:left;
+	margin-right:15px;
+}
+
+#summoner_div {
+	display:inline;
+}
+
+.item_div {
+	background:#132138;
+	padding:5px;
+	border:3px solid #0d244e;
+	display:inline-block;
+	margin-bottom:20px;
+}
+
+.item_div h4 {
+	margin-left:4px;
+	display:inline;
+}
+
+.ab_reference {
+	background:#132138;
+	display:inline-block;
+	color:#000;
+	text-align:center;
+	border:5px solid #060e1c;
+	height:32px;
+	width:32px;
+}
+
+.ab_reference h4 {
+	margin-top:6px;
+}
+
+.ab_check {
+	background:#132138;
+	display:inline-block;
+	color:#000;
+	text-align:center;
+	border:5px solid #060e1c;
+	height:32px;
+	width:32px;
+}
+
+.ab_check_selected {
+	background:#008a32;
+	display:inline-block;
+	color:#000;
+	text-align: center;
+	border:5px solid #060e1c;
+	height:32px;
+	width:32px;
+}
+
+.ab_data {
+	display:inline;
+}
+
+.ab_data h4 {
+	display:inline-block;
+}
+
+.ab_data img {
+	height:32px;
+	border:5px solid #060e1c;
+}
+
+#summoner_ranked_table {
+	margin:0px;
+	padding:0px;
+	border-spacing: 0px;
+	border-top:1px solid #fff;
+	border-left:1px solid #fff;
+}
+
+#summoner_ranked_table tbody tr {
+	margin:0px;
+	padding:0px;
+}
+
+#summoner_ranked_table tbody tr td{
+	padding:20px 50px 20px 50px;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	background:#050c13;
+}
+
+#current_user_rank {
+	border:3px solid #0d244e;
+	margin-bottom:5px;
+	display:inline-block;
+}

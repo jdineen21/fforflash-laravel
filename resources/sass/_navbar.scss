@@ -1,0 +1,57 @@
+/* Navbar */
+
+.navbar {
+	background:#233148;
+	margin-top:3px;
+	border: 3px solid #0d244e;
+}
+
+.tab {
+	display:inline-block;
+	padding:10px 25px 10px 25px;
+	background:#233148;
+}
+
+.tab:hover {
+	background:#132138;
+}
+
+#form {
+	margin:0px;
+}
+
+.form_div {
+	padding:2px;
+	border:2px solid #0d244e;
+}
+
+.textbox {
+	display:inline-block;
+	width:300px;
+	background:#233148;
+	border:0px;
+	color:rgb(75, 177, 255);
+	padding:5px 10px;
+}
+
+.submit_div {
+	cursor: pointer;
+	float: right;
+	width: 16px;
+	height: 16px;
+	padding:8px 0px 0px 0px;
+	margin-right:10px;
+	background-image:url(/css/images/magnify_white.png);
+	background-position: 100%;
+	background-repeat: no-repeat;
+}
+
+.submit_div input {
+	border:0;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	font-size: 0;
+}

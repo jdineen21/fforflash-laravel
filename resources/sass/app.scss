@@ -4,9 +4,97 @@
 // Variables
 @import 'variables';
 
+// Sections
+@import 'championInfo';
+@import 'footer';
+@import 'guides';
+@import 'login';
+@import 'navbar';
+@import 'relativeNavbar';
+@import 'searchResults';
+@import 'thread';
+@import 'topbar';
+@import 'wrapper';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.rule{
-    color: red;
+body {
+	background:#091120 url(/css/images/background.png) repeat top left;
+	background:#000 url(/css/images/main-bg-pattern.png) repeat top left;
+	font-family:'Roboto Condensed', Arial, sans-serif;
+	margin:0;
+}
+
+a {
+	text-decoration:none;
+	color:#FFF;
+}
+
+p {
+	font-size:14px;
+	margin:0px 0px 0px 5px;
+	color: #a2b6d1;
+}
+
+td {
+	font-size:14px;
+	margin:0px 0px 0px 5px;
+	color: #a2b6d1;
+}
+
+h1 {
+	padding:0px 5px 0px 5px;
+	color:#FFF;
+	display:inline-block;
+	margin:0px;
+	background:#132138;
+	text-align:center;
+	border: 2px solid #0d244e;
+}
+
+h2 {
+	color:#FFF;
+	margin:0px;
+	padding:0px;
+	font-weight:normal;
+}
+
+h3  {
+	padding:0px 5px 0px 5px;
+	color:#FFF;
+	margin:0px;
+	background:#132138;
+	border:3px solid #0d244e;
+	margin-bottom:3px;
+	font-weight:normal;
+}
+
+h4 {
+	color:#FFF;
+	margin:0;
+}
+
+li {
+	color:#FFF;
+	list-style-type:none;
+}
+
+img {
+	border:2px solid #0d244e;
+}
+
+form {
+	display:inline-block
+}
+
+#test {
+	display:inline;
+}
+
+.stan_cont_wrapper {
+	margin-top:3px;
+	background:#233148;
+	border:3px solid #0d244e;
+	padding:5px;
 }

@@ -11,8 +11,6 @@ class CreateItemsTable extends Migration
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
         Schema::connection('static')->create('items', function (Blueprint $table) {

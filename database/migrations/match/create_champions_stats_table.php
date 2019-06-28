@@ -11,12 +11,10 @@ class CreateChampionsStatsTable extends Migration
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
-        Schema::connection('static')->create('champions_stats', function (Blueprint $table) {
-            $table->integer('champions_key')->primary();
+        Schema::create('champions.stats', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('hp');
             $table->integer('hpperlevel');
             $table->integer('mp');
@@ -38,8 +36,6 @@ class CreateChampionsStatsTable extends Migration
             $table->integer('attackspeedperlevel');
             $table->integer('attackspeed');
             $table->timestamps();
-
-            $table->foreign('champions_key')->references('key')->on('champions');
         });
     }
 

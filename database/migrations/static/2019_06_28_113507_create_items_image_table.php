@@ -4,23 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsGoldTable extends Migration
+class CreateItemsImageTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
-        Schema::connection('static')->create('items_gold', function (Blueprint $table) {
+        Schema::connection('static')->create('items_image', function (Blueprint $table) {
             $table->integer('items_key')->primary();
-            $table->integer('base');
-            $table->boolean('purchasable');
-            $table->integer('total');
-            $table->integer('sell');
+            $table->string('full');
+            $table->string('sprite');
+            $table->string('group');
+            $table->integer('x');
+            $table->integer('y');
+            $table->integer('w');
+            $table->integer('h');
             $table->timestamps();
 
             $table->foreign('items_key')->references('key')->on('items');
@@ -34,6 +35,6 @@ class CreateItemsGoldTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items_gold');
+        Schema::dropIfExists('item_images');
     }
 }

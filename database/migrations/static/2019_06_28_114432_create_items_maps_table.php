@@ -11,8 +11,6 @@ class CreateItemsMapsTable extends Migration
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
         Schema::connection('static')->create('items_maps', function (Blueprint $table) {

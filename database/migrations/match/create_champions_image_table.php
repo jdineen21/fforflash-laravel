@@ -11,12 +11,10 @@ class CreateChampionsImageTable extends Migration
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
-        Schema::connection('static')->create('champions_image', function (Blueprint $table) {
-            $table->integer('champions_key')->primary();
+        Schema::create('champions.image', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('full');
             $table->string('sprite');
             $table->string('group');
@@ -25,8 +23,6 @@ class CreateChampionsImageTable extends Migration
             $table->integer('w');
             $table->integer('h');
             $table->timestamps();
-
-            $table->foreign('champions_key')->references('key')->on('champions');
         });
     }
 

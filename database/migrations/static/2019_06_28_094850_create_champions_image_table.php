@@ -4,19 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsImageTable extends Migration
+class CreateChampionsImageTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    protected $connection = 'static';
-
     public function up()
     {
-        Schema::connection('static')->create('items_image', function (Blueprint $table) {
-            $table->integer('items_key')->primary();
+        Schema::connection('static')->create('champions_image', function (Blueprint $table) {
+            $table->integer('champions_key')->primary();
             $table->string('full');
             $table->string('sprite');
             $table->string('group');
@@ -26,7 +24,7 @@ class CreateItemsImageTable extends Migration
             $table->integer('h');
             $table->timestamps();
 
-            $table->foreign('items_key')->references('key')->on('items');
+            $table->foreign('champions_key')->references('key')->on('champions');
         });
     }
 
@@ -37,6 +35,6 @@ class CreateItemsImageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_images');
+        Schema::dropIfExists('champions_image');
     }
 }

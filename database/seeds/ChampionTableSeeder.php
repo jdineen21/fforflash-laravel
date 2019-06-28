@@ -31,7 +31,11 @@ class ChampionTableSeeder extends Seeder
             $champion->version = $data->version;
             $champion->champId = $data->id;
             $champion->key = $data->key;
-            $champion->name = $data->name;
+            if ($data->name == 'Nunu & Willump') {
+                $champion->name = 'Nunu';
+            } else {
+                $champion->name = $data->name;
+            }
             $champion->title = $data->title;
             $champion->blurb = $data->blurb;
             $info->champions_key = $data->key;

@@ -17,62 +17,50 @@
 			<div class="navbar_wrapper">
 				<div class="registration">
 					<a href="/">FForFlash.com</a>
-				</div>
-				<div class="registration" style="padding-right:0px;">
-					<?php
-						// if (empty($_SESSION["userReference"])) {
-						// 	echo '
-						// 	<a href="../login">Log In</a>
-						// 	<a href="../register" id="end">Register</a>
-						// 	';
-						// } else {
-						// 	echo '
-						// 	<a href="../profile.php?username=' . $_SESSION["username"] . '">' . $_SESSION["username"] . '</a>
-						// 	<a href="../login/signout.php?currenturl=' . $_SERVER['REQUEST_URI'] . '" id="end">Sign out</a>
-						// 	';
-						// }
-					?>
+					<p>Providing the most recent patch data and statistics</p>
 				</div>
 			</div>
 		</div>
+		<div class="navbar">
+			<ul>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/tier">Tier List</a>
+				</li>
+				<li>
+					<a href="/summoner-info">Summoner Info</a>
+					
+				</li>
+				<li>
+					<a href="/champion-select">Champ Select</a>
+				</li>
+				<li>
+					<a href="/contact">Contact Us</a>
+				</li>
+				{{-- <li id="logo">
+					<img src="css/images/logo.png"/>
+				</li> --}}
+				<li>
+					<form action="http://www.fforflash.com/search" method="get">
+						<input type="text" name="query" placeholder="Search This Site" class="textbox">
+						{{-- Fix submit button --}}
+						{{-- <a href="/search"><div class="submit_div"></div></a> --}}
+					</form>
+				</li>
+			</ul>
+		</div>
 		<div class="wrapper">
-			<div class="top_bar">
+			{{-- <div class="top_bar">
 				<a href="../guide-builder">
 					<div class="create_new_guide">
 						<h3>Guide Builder</h3>
 						<h4>Make a New Guide</h4>
 					</div>
 				</a>
-				<h1>F For Flash</h1>
-				<img src="css/images/FFFLogo.jpg"/>
-			</div>
-			<div class="navbar">
-				<ul>
-					<li>
-						<a href="/" >Home</a>
-					</li>
-					<li>
-						<a href="/tier" >Tier List</a>
-					</li>
-					<li>
-						<a href="/summoner-info" >Summoner Info</a>
-						
-					</li>
-					<li>
-						<a href="/champion-select" >Champ Select</a>
-					</li>
-					<li>
-						<a href="/contact" >Contact Us</a>
-					</li>
-					<li>
-						<form action="http://www.fforflash.com/search" method="get">
-							<input type="text" name="query" placeholder="Search This Site" class="textbox">
-							{{-- Fix submit button --}}
-							{{-- <a href="/search"><div class="submit_div"></div></a> --}}
-						</form>
-					</li>
-				</ul>
-			</div>
+				<img src="css/images/logo.png"/>
+			</div> --}}
 			<div class="content">
                 @yield('content')
             </div>

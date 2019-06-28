@@ -1,16 +1,17 @@
 /* Top Bar */
 
 .top_bar {
-	height:106px;
-	background:#233148;
-	padding:5px;
+	height: 8em;
+	background: #233148;
 	border: 3px solid #0d244e;
 }
 
 .top_bar img {
-	height:100px;
+	height: 8em;
 	display:inline;
 	float:left;
+	border: 0;
+	border-right: 3px solid #0d244e;
 }
 
 .top_bar p {

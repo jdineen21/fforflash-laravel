@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Champion extends Model
 {
+    protected $connection = 'static';
     protected $table = 'champions';
     protected $primaryKey = 'key';
 

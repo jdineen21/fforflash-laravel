@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stats extends Model
 {
+    protected $connection = 'static';
     protected $table = 'champions_stats';
     protected $primaryKey = 'champions_key';
 

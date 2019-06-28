@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    protected $connection = 'static';
     protected $table = 'champions_image';
     protected $primaryKey = 'champions_key';
 

@@ -10,10 +10,10 @@ class CreateChampionsTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */    
     public function up()
     {
-        Schema::create('champions', function (Blueprint $table) {
+        Schema::connection('static')->create('champions', function (Blueprint $table) {
             $table->string('version');
             $table->string('champId');
             $table->integer('key')->primary();

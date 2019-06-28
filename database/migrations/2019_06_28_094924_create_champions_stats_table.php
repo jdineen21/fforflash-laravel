@@ -11,9 +11,11 @@ class CreateChampionsStatsTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('champions_stats', function (Blueprint $table) {
+        Schema::connection('static')->create('champions_stats', function (Blueprint $table) {
             $table->integer('champions_key')->primary();
             $table->integer('hp');
             $table->integer('hpperlevel');

@@ -11,9 +11,11 @@ class CreateItemsTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::connection('static')->create('items', function (Blueprint $table) {
             $table->integer('key')->primary();
             $table->string('name');
             $table->string('description');

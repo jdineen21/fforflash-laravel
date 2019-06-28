@@ -11,9 +11,11 @@ class CreateItemsImageTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('items_image', function (Blueprint $table) {
+        Schema::connection('static')->create('items_image', function (Blueprint $table) {
             $table->integer('items_key')->primary();
             $table->string('full');
             $table->string('sprite');

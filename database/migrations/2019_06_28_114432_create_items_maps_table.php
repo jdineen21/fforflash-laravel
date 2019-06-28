@@ -11,9 +11,11 @@ class CreateItemsMapsTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('items_maps', function (Blueprint $table) {
+        Schema::connection('static')->create('items_maps', function (Blueprint $table) {
             $table->integer('items_key')->primary();
             $table->boolean('10');
             $table->boolean('11');

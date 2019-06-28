@@ -11,9 +11,11 @@ class CreateItemsGoldTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('items_gold', function (Blueprint $table) {
+        Schema::connection('static')->create('items_gold', function (Blueprint $table) {
             $table->integer('items_key')->primary();
             $table->integer('base');
             $table->boolean('purchasable');

@@ -11,9 +11,11 @@ class CreateChampionsImageTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'static';
+
     public function up()
     {
-        Schema::create('champions_image', function (Blueprint $table) {
+        Schema::connection('static')->create('champions_image', function (Blueprint $table) {
             $table->integer('champions_key')->primary();
             $table->string('full');
             $table->string('sprite');

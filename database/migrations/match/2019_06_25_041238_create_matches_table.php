@@ -13,7 +13,7 @@ class CreateMatchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('matches', function (Blueprint $table) {
+        Schema::connection('match')->create('matches', function (Blueprint $table) {
             $table->integer('gameCreation')->nullable();
             $table->integer('gameDuration')->nullable();
             $table->bigIncrements('gameId');

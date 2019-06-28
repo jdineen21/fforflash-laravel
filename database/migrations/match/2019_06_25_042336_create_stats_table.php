@@ -13,7 +13,7 @@ class CreateStatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('stats', function (Blueprint $table) {
+        Schema::connection('match')->create('stats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('participantId');
             $table->integer('assists')->nullable();

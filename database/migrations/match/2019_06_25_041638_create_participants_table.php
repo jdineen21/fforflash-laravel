@@ -13,7 +13,7 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participants', function (Blueprint $table) {
+        Schema::connection('match')->create('participants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('gameId');
             $table->integer('championId')->nullable();

@@ -13,7 +13,7 @@ class CreateBansTable extends Migration
      */
     public function up()
     {
-        Schema::create('bans', function (Blueprint $table) {
+        Schema::connection('match')->create('bans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('teamId');
             $table->integer('pickTurn')->nullable();

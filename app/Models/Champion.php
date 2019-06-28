@@ -11,16 +11,16 @@ class Champion extends Model
 
     public function info()
     {
-        return $this->hasOne('App\Models\Champion\Info', 'champion_key');
+        return $this->hasOne('App\Models\Champion\Info', 'champions_key');
     }
 
     public function image()
     {
-        return $this->hasOne('App\Models\Champion\Image', 'champion_key');
+        return $this->hasOne('App\Models\Champion\Image', 'champions_key');
     }
 
     public function stats() 
     {
-        return $this->hasOne('App\Models\Champion\Stats', 'champion_key');
+        return $this->hasOne('App\Models\Champion\Stats', 'champions_key');
     }
 }

@@ -34,11 +34,11 @@ class ChampionTableSeeder extends Seeder
             $champion->name = $data->name;
             $champion->title = $data->title;
             $champion->blurb = $data->blurb;
-            $info->champions_key = $data->key;
-            $image->champions_key = $data->key;
+            $info->champion_key = $data->key;
+            $image->champion_key = $data->key;
             $champion->tags = implode(' ', $data->tags);
             $champion->partype = $data->partype;
-            $stats->champions_key = $data->key;
+            $stats->champion_key = $data->key;
 
             $champion->save();
             $info->save();

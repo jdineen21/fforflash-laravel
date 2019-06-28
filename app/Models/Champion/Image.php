@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     protected $table = 'champions_image';
-    protected $primaryKey = 'champion_key';
+    protected $primaryKey = 'champions_key';
 }

@@ -37,7 +37,7 @@ class ChampionsStats extends Migration
             $table->integer('attackspeed');
             $table->timestamps();
 
-            $table->foreign('champion_key')->references('key')->on('champions');
+            $table->foreign('champions_key')->references('key')->on('champions');
         });
     }
 

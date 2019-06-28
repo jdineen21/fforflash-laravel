@@ -14,7 +14,7 @@ class ChampionsImage extends Migration
     public function up()
     {
         Schema::create('champions_image', function (Blueprint $table) {
-            $table->integer('champion_key')->primary();
+            $table->integer('champions_key')->primary();
             $table->string('full');
             $table->string('sprite');
             $table->string('group');
@@ -24,7 +24,7 @@ class ChampionsImage extends Migration
             $table->integer('h');
             $table->timestamps();
 
-            $table->foreign('champion_key')->references('key')->on('champions');
+            $table->foreign('champions_key')->references('key')->on('champions');
         });
     }
 

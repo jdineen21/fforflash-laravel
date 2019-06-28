@@ -8,4 +8,9 @@ class Image extends Model
 {
     protected $table = 'champions_image';
     protected $primaryKey = 'champions_key';
+
+    public function champion() 
+    {
+        return $this->belongsTo('App\Models\Champion', 'champions_key');
+    }
 }

@@ -8,4 +8,9 @@ class Maps extends Model
 {
     protected $table = 'items_maps';
     protected $primaryKey = 'items_key';
+
+    public function item() 
+    {
+        return $this->belongsTo('App\Models\Item', 'items_key');
+    }
 }

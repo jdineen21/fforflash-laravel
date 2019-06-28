@@ -8,4 +8,9 @@ class Gold extends Model
 {
     protected $table = 'items_gold';
     protected $primaryKey = 'items_key';
+
+    public function item() 
+    {
+        return $this->belongsTo('App\Models\Item', 'items_key');
+    }
 }

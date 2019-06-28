@@ -33,6 +33,6 @@ class CreatePlayersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('players');
+        Schema::connection('match')->dropIfExists('players');
     }
 }

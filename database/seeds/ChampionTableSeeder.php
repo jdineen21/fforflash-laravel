@@ -2,7 +2,10 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Champion;
+use App\Models\Champion;
+use App\Models\Champion\Info;
+use App\Models\Champion\Image;
+use App\Models\Champion\Stats;
 
 class ChampionTableSeeder extends Seeder
 {
@@ -17,12 +20,13 @@ class ChampionTableSeeder extends Seeder
 
         $json = json_decode(file_get_contents($url));
 
-        dd($json->data->Zyra);
-
         foreach ($json->data as $key => $value) 
         {
             $data = $json->data->$key;
             $champion = new Champion();
+            $info = new Info((array)$data->info);
+            $image = new Image((array)$data->image);
+            $stats = new Stats((array)$data->stats);
 
             $champion->version = $data->version;
             $champion->champId = $data->id;
@@ -30,13 +34,16 @@ class ChampionTableSeeder extends Seeder
             $champion->name = $data->name;
             $champion->title = $data->title;
             $champion->blurb = $data->blurb;
-            $champion->info = $data->info;
-            $champion->image = $data->image;
-            $champion->tags = $data->tags;
+            $info->champions_key = $data->key;
+            $image->champions_key = $data->key;
+            $champion->tags = implode(' ', $data->tags);
             $champion->partype = $data->partype;
-            $champion->stats = $data->stats;
+            $stats->champions_key = $data->key;
 
             $champion->save();
+            $info->save();
+            $image->save();
+            $stats->save();
         }
     }
 }

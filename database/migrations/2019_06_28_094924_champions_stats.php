@@ -13,8 +13,8 @@ class ChampionsStats extends Migration
      */
     public function up()
     {
-        Schema::create('champions_stats', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('champions_stat', function (Blueprint $table) {
+            $table->integer('champions_key')->primary();
             $table->integer('hp');
             $table->integer('hpperlevel');
             $table->integer('mp');
@@ -36,6 +36,8 @@ class ChampionsStats extends Migration
             $table->integer('attackspeedperlevel');
             $table->integer('attackspeed');
             $table->timestamps();
+
+            $table->foreign('champion_key')->references('key')->on('champions');
         });
     }
 

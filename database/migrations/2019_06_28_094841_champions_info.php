@@ -14,12 +14,14 @@ class ChampionsInfo extends Migration
     public function up()
     {
         Schema::create('champions_info', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('champion_key')->primary();
             $table->integer('attack');
             $table->integer('defense');
             $table->integer('magic');
             $table->integer('difficulty');
             $table->timestamps();
+
+            $table->foreign('champion_key')->references('key')->on('champions');
         });
     }
 

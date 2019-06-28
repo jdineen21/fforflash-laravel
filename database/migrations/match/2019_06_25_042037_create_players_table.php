@@ -14,7 +14,7 @@ class CreatePlayersTable extends Migration
     public function up()
     {
         Schema::connection('match')->create('players', function (Blueprint $table) {
-            $table->string('accountId');
+            $table->string('accountId')->primary();
             $table->string('currentAccountId');
             $table->string('currentPlatformId');
             $table->string('matchHistoryUri');

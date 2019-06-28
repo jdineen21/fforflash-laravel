@@ -16,7 +16,7 @@ class CreateMatchesTable extends Migration
         Schema::connection('match')->create('matches', function (Blueprint $table) {
             $table->integer('gameCreation')->nullable();
             $table->integer('gameDuration')->nullable();
-            $table->integer('gameId');
+            $table->integer('gameId')->primary();
             $table->string('gameMode')->nullable();
             $table->string('gameType')->nullable();
             $table->string('gameVersion')->nullable();

@@ -13,7 +13,7 @@ class ChampionsStats extends Migration
      */
     public function up()
     {
-        Schema::create('champions_stat', function (Blueprint $table) {
+        Schema::create('champions_stats', function (Blueprint $table) {
             $table->integer('champions_key')->primary();
             $table->integer('hp');
             $table->integer('hpperlevel');

@@ -37,8 +37,10 @@ class MigrateStaticTables extends Command
      */
     public function handle()
     {
-        $this->call('migrate:fresh', 
-            ['--database' => 'static'],
+        $this->call('migrate:fresh',
+            ['--database' => 'static']
+        );
+        $this->call('migrate',
             ['--path' => 'database/migrations/static']
         );
     }

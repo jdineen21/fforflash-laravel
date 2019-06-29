@@ -8,10 +8,11 @@ class Player extends Model
 {
     protected $connection = 'match';
     protected $table = 'players';
-    protected $primaryKey = 'accountId';
+    protected $primaryKey = 'id';
 
     public function match() 
     {
-        return $this->belongsToMany('App\Models\Match', 'participants', 'accountId', 'gameId');
+        echo 'Mom';
+        return $this->belongsToMany('App\Models\Match\Match', 'participants', 'id', 'player_id');
     }
 }

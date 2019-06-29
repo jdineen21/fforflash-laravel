@@ -20,6 +20,10 @@ class ChampionTableSeeder extends Seeder
 
         $json = json_decode(file_get_contents($url));
 
+        $items = count((array)$json->data);
+        echo ($items.' champions to load.'.PHP_EOL);
+        $this->command->getOutput()->progressStart($items);
+
         foreach ($json->data as $key => $value) 
         {
             $data = $json->data->$key;
@@ -48,6 +52,9 @@ class ChampionTableSeeder extends Seeder
             $info->save();
             $image->save();
             $stats->save();
+
+            $this->command->getOutput()->progressAdvance();
         }
+        $this->command->getOutput()->progressFinish();
     }
 }

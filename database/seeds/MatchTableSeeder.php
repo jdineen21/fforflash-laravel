@@ -44,7 +44,7 @@ class MatchTableSeeder extends Seeder
         foreach ($items as $key => $value) 
         {
             array_push($batch, $value);
-            if (count($batch) == 20) 
+            if (count($batch) == 1000) 
             {
                 Match::insert($batch);
                 $batch = [];

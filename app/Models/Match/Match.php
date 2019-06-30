@@ -8,10 +8,10 @@ class Match extends Model
 {
     protected $connection = 'match';
     protected $table = 'matches';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'gameId';
 
     public function player()
     {
-        return $this->belongsToMany('App\Models\Match\Player', 'participants', 'id', 'match_id');
+        return $this->belongsToMany('App\Models\Match\Player', 'participants', 'gameId', 'player_id')->withPivot('championId', 'highestAchievedSeasonTier', 'spell1Id', 'spell2Id', 'teamId');
     }
 }

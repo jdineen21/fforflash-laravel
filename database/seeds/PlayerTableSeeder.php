@@ -32,7 +32,8 @@ class PlayerTableSeeder extends Seeder
                         $player = $data->participantIdentities[$pi]->player;
                         
                         $p = (array)$player;
-                        $p['id'] = hash('md5', $player->accountId);
+                        $p['id'] = unpack('V2', hash('sha256', $player->accountId, true))[1];
+
                         array_push($items, $p);
                     }
                 }
@@ -49,7 +50,7 @@ class PlayerTableSeeder extends Seeder
             if (!in_array($value['accountId'], $blacklist)) {
                 array_push($batch, $value);
                 array_push($blacklist, $value['accountId']);
-                if (count($batch) == 50)
+                if (count($batch) == 1000)
                 {
                     Player::insert($batch);
                     $batch = [];
@@ -57,6 +58,8 @@ class PlayerTableSeeder extends Seeder
             }
             $this->command->getOutput()->progressAdvance();
         }
+        Player::insert($batch);
+
         $this->command->getOutput()->progressFinish();
     }
 }

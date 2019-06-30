@@ -12,7 +12,6 @@ class Player extends Model
 
     public function match() 
     {
-        echo 'Mom';
-        return $this->belongsToMany('App\Models\Match\Match', 'participants', 'id', 'player_id');
+        return $this->belongsToMany('App\Models\Match\Match', 'participants', 'player_id', 'gameId')->withPivot('championId', 'highestAchievedSeasonTier', 'spell1Id', 'spell2Id', 'teamId');
     }
 }

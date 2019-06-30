@@ -2,9 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Match\Match;
 use App\Models\Match\Participant;
-use App\Models\Match\Player;
 
 class ParticipantTableSeeder extends Seeder
 {
@@ -20,54 +18,50 @@ class ParticipantTableSeeder extends Seeder
         $seedData = fread($seedFile, filesize($path));
         $matches = array_unique(explode(PHP_EOL, $seedData));
 
-        $items = 0;
+        $items = [];
         foreach ($matches as $m => $value)
         {
             $data = json_decode($matches[$m]);
             if (is_object($data)) {
                 foreach ($data->participants as $p => $value) {
-                    $items++;
+                    if (!$data->participantIdentities[$p]->player->accountId == '0') {
+                        $partData = $data->participants[$p];
+                        $player = $data->participantIdentities[$p]->player;
+
+                        unset($partData->participantId);
+                        unset($partData->stats);
+                        unset($partData->timeline);
+
+                        $partData->gameId = $data->gameId;
+                        $partData->player_id = unpack('V2', hash('sha256', $player->accountId, true))[1];
+
+                        $partData = (array)$partData;
+
+                        if (!array_key_exists('highestAchievedSeasonTier', $partData)) {
+                            $partData['highestAchievedSeasonTier'] = NULL;
+                        }
+
+                        array_push($items, (array)$partData);
+                    }
                 }
             }
         }
 
-        echo ($items.' participants to load.'.PHP_EOL);
-        $this->command->getOutput()->progressStart($items);
+        echo (count($items).' participants to load.'.PHP_EOL);
+        $this->command->getOutput()->progressStart(count($items));
 
-        foreach ($matches as $m => $value)
+        $batch = [];
+        foreach ($items as $key => $value) 
         {
-            $data = json_decode($matches[$m]);
-            if (is_object($data)) {
-                foreach ($data->participants as $p => $value) {
-                    $partData = $data->participants[$p];
-
-                    $participantId = $partData->participantId;
-
-                    unset($partData->participantId);
-                    unset($partData->stats);
-                    unset($partData->timeline);
-
-                    $part = new Participant((array)$partData);
-
-                    try {
-                        $part->gameId = $data->gameId;
-                        $part->player_id = hash('md5', $part->accountId);
-                    } 
-                    catch (Exception $e) {
-                        echo ($data->participantIdentities[$participantId-1]->player->accountId);
-                        dd($e);
-                    }
-                    $this->command->getOutput()->progressAdvance();
-
-                    try {
-                        $part->save();
-                    } 
-                    catch (Exception $e) {
-                        dd($e);
-                    }
-                }
+            array_push($batch, $value);
+            if (count($batch) == 1000)
+            {
+                Participant::insert($batch);
+                $batch = [];
             }
+            $this->command->getOutput()->progressAdvance();
         }
+        Participant::insert($batch);
         $this->command->getOutput()->progressFinish();
     }
 }

@@ -15,6 +15,7 @@ class CreateStatsTable extends Migration
     {
         Schema::connection('match')->create('stats', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('participant_id');
             $table->integer('participantId');
             $table->integer('assists')->nullable();
             $table->integer('champLevel')->nullable();
@@ -50,6 +51,8 @@ class CreateStatsTable extends Migration
             $table->integer('magicDamageDealtToChampions')->nullable();
             $table->integer('magicalDamageTaken')->nullable();
             $table->integer('neutralMinionsKilled')->nullable();
+            $table->integer('neutralMinionsKilledTeamJungle')->nullable();
+            $table->integer('neutralMinionsKilledEnemyJungle')->nullable();
             $table->integer('objectivePlayerScore')->nullable();
             $table->integer('pentaKills')->nullable();
             $table->integer('perk0')->nullable();
@@ -112,12 +115,14 @@ class CreateStatsTable extends Migration
             $table->integer('trueDamageTaken')->nullable();
             $table->integer('turretKills')->nullable();
             $table->integer('unrealKills')->nullable();
+            $table->integer('wardsKilled')->nullable();
+            $table->integer('wardsPlaced')->nullable();
             $table->integer('visionScore')->nullable();
             $table->integer('visionWardsBoughtInGame')->nullable();
             $table->boolean('win')->nullable();
             $table->timestamps();
 
-            $table->foreign('participantId')->references('id')->on('participants');
+            $table->foreign('participant_id')->references('id')->on('participants');
         });
     }
 

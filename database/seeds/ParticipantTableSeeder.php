@@ -22,9 +22,12 @@ class ParticipantTableSeeder extends Seeder
         foreach ($matches as $m => $value)
         {
             $data = json_decode($matches[$m]);
-            if (is_object($data)) {
-                foreach ($data->participants as $p => $value) {
-                    if (!$data->participantIdentities[$p]->player->accountId == '0') {
+            if (is_object($data)) 
+            {
+                foreach ($data->participants as $p => $value) 
+                {
+                    if (!$data->participantIdentities[$p]->player->accountId == '0') 
+                    {
                         $partData = $data->participants[$p];
                         $player = $data->participantIdentities[$p]->player;
 
@@ -37,7 +40,8 @@ class ParticipantTableSeeder extends Seeder
 
                         $partData = (array)$partData;
 
-                        if (!array_key_exists('highestAchievedSeasonTier', $partData)) {
+                        if (!array_key_exists('highestAchievedSeasonTier', $partData)) 
+                        {
                             $partData['highestAchievedSeasonTier'] = NULL;
                         }
 

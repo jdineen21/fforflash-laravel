@@ -120,7 +120,6 @@ class CreateStatsTable extends Migration
             $table->integer('visionScore')->nullable();
             $table->integer('visionWardsBoughtInGame')->nullable();
             $table->boolean('win')->nullable();
-            $table->timestamps();
 
             $table->foreign('participant_id')->references('id')->on('participants');
         });

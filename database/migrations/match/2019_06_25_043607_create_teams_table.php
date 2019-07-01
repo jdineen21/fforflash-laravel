@@ -31,7 +31,6 @@ class CreateTeamsTable extends Migration
             $table->integer('towerKills')->nullable();
             $table->integer('vilemawKills')->nullable();
             $table->string('win')->nullable();
-            $table->timestamps();
 
             $table->foreign('gameId')->references('gameId')->on('matches');
         });

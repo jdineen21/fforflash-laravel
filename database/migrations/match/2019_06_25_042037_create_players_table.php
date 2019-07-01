@@ -23,7 +23,6 @@ class CreatePlayersTable extends Migration
             $table->integer('profileIcon');
             $table->string('summonerId');
             $table->string('summonerName');
-            $table->timestamps();
         });
     }
 

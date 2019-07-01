@@ -22,7 +22,6 @@ class CreateParticipantsTable extends Migration
             $table->integer('spell1Id');
             $table->integer('spell2Id');
             $table->integer('teamId');
-            $table->timestamps();
 
             $table->foreign('gameId')->references('gameId')->on('matches');
             $table->foreign('player_id')->references('id')->on('players');

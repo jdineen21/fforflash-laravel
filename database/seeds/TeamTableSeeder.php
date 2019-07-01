@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Match\Stats;
+use App\Models\Match\Team;
 
-class StatsTableSeeder extends Seeder
+class TeamTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,9 @@ class StatsTableSeeder extends Seeder
         $seedData = fread($seedFile, filesize($path));
         $matches = array_unique(explode(PHP_EOL, $seedData));
 
-        $schema = Schema::connection('match')->getColumnListing('stats');
+        $schema = Schema::connection('match')->getColumnListing('teams');
+
+        dd($schema);
 
         unset($schema[0]);
         unset($schema[1]);
@@ -29,7 +31,7 @@ class StatsTableSeeder extends Seeder
             $data = json_decode($matches[$m]);
             if (is_object($data))
             {
-                foreach ($data->participants as $p => $value) 
+                foreach ($data->teams as $t => $value) 
                 {
                     if (!$data->participantIdentities[$p]->player->accountId == '0') 
                     {

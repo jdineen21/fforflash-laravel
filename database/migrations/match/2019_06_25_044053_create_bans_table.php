@@ -18,7 +18,6 @@ class CreateBansTable extends Migration
             $table->integer('teamId');
             $table->integer('pickTurn')->nullable();
             $table->integer('championId')->nullable();
-            $table->timestamps();
 
             $table->foreign('teamId')->references('teamId')->on('teams');
         });

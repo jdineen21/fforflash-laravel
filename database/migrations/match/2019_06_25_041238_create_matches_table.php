@@ -24,7 +24,6 @@ class CreateMatchesTable extends Migration
             $table->string('platformId');
             $table->integer('queueId');
             $table->integer('seasonId');
-            $table->timestamps();
         });
     }
 

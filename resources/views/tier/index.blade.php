@@ -13,6 +13,19 @@
                     <td>Ban Rate</td>
                     <td>Matches</td>
                 </tr>
+
+                @foreach ($tierData as $row)
+
+                <tr>
+                    <td>NA</td>
+                    <td>{{ $row }}</td>
+                    <td>54.98%</td>
+                    <td>1.3%</td>
+                    <td>0.2%</td>
+                    <td>522</td>
+                </tr>
+
+				@endforeach
                 <tr>
                     <td>1</td>
                     <td>Skarner</td>

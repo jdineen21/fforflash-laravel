@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Champion;
+use App\Models\Champion\Champion;
 
 class IndexController extends Controller
 {

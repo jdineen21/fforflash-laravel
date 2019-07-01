@@ -15,14 +15,12 @@ class ChampionsController extends Controller
 
     public function show(Champion $champion) 
     {
+        $champId = $champion->champId;
+        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';//?api_key='.env('RIOT_API_KEY');
+        $indiv_champion = json_decode(file_get_contents($url))->data->$champId;
 
-        // $project = Project::findOrFail($id);
+        return (array)$indiv_champion;
 
-        // return $project;
-
-        return $champion;
-
-        return view('projects.show', compact('project'));
-
+        return view('champions.show', compact('indiv_champion'));
     }
 }

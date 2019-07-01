@@ -16,7 +16,7 @@ class ChampionTableSeeder extends Seeder
      */
     public function run() 
     {
-        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion.json?api_key='.env('RIOT_API_KEY');
+        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion.json';//?api_key='.env('RIOT_API_KEY');
 
         $json = json_decode(file_get_contents($url));
 

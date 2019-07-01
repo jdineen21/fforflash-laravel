@@ -28,8 +28,7 @@ class IndexController extends Controller
             array_push($freeChampionsForNewPlayers, Champion::where('key', $x)->first()->champId);
         }
         
-        return view('index', compact(
-            'champions', 
+        return view('index', compact( 
             'freeChampions', 
             'freeChampionsForNewPlayers'
         ));

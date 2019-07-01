@@ -10,8 +10,6 @@ class ChampionsController extends Controller
 {
     public function index ()
     {
-        $champions = Champion::all();
-
-        return view('champions.index', compact('champions'));
+        return view('champions.index');
     }
 }

@@ -47,6 +47,6 @@ class TierListController extends Controller
         //     }
         // }
 
-        return view('tier.index', compact('champions', 'tierData'));
+        return view('tier.index', compact('tierData'));
     }
 }

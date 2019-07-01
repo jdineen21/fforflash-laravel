@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Pass champion data to all views
-        $data = Champion::all()->sortBy('name');
-        view()->share('champions', $data);
+        $champions = Champion::all()->sortBy('name');
+        view()->share('champions', $champions);
     }
 }

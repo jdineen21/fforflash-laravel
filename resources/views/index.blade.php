@@ -48,7 +48,7 @@
                 <h3>Free To Play Champions</h3>
                 <div id="free_champs_img">
                 @foreach ($freeChampions as $champion)
-                    <img src="/datadragon/9.13.1/img/champion/{{ $champion }}.png">
+                    <a href="/champion/{{ $champion->key }}"><img src="/datadragon/9.13.1/img/champion/{{ $champion->champId }}.png"></a>
                 @endforeach
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 <h3>Free To Play Champions for New Players Below level 10</h3>
                 <div id="free_champs_img">
                 @foreach ($freeChampionsForNewPlayers as $champion)
-                    <img src="/datadragon/9.13.1/img/champion/{{ $champion }}.png">
+                    <a href="/champion/{{ $champion->key }}"><img src="/datadragon/9.13.1/img/champion/{{ $champion->champId }}.png"></a>
                 @endforeach
                 </div>
             </div>

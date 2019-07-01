@@ -20,12 +20,12 @@ class IndexController extends Controller
 
         $freeChampions = [];
         foreach ($freeChampionIds as $x) {
-            array_push($freeChampions, Champion::where('key', $x)->first()->champId);
+            array_push($freeChampions, Champion::where('key', $x)->first());
         }
 
         $freeChampionsForNewPlayers = [];
         foreach ($freeChampionIdsForNewPlayers as $x) {
-            array_push($freeChampionsForNewPlayers, Champion::where('key', $x)->first()->champId);
+            array_push($freeChampionsForNewPlayers, Champion::where('key', $x)->first());
         }
         
         return view('index', compact( 

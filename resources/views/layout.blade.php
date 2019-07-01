@@ -30,13 +30,13 @@
 					<a href="/tier">Tier List</a>
 				</li>
 				<li>
-					<a href="/champions">Champions</a>
+					<a href="/champion">Champions</a>
 				</li>
 				<li>
-					<a href="/summoner-info">Summoner Info</a>
+					<a href="/summoner-info">Summoner</a>
 				</li>
 				<li>
-					<a href="/champion-select">Champ Select</a>
+					<a href="/champion-select">Champion Select</a>
 				</li>
 				<li>
 					<a href="/contact">Contact Us</a>
@@ -71,7 +71,7 @@
                 <div id="champion_links">
 					@foreach ($champions as $champion)
 
-					<a href="">{{ $champion->name }}</a>
+					<a href="/champion/{{ $champion->key }}">{{ $champion->name }}</a>
 
 					@endforeach
                 </div>

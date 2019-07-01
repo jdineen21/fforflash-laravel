@@ -12,4 +12,17 @@ class ChampionsController extends Controller
     {
         return view('champions.index');
     }
+
+    public function show(Champion $champion) 
+    {
+
+        // $project = Project::findOrFail($id);
+
+        // return $project;
+
+        return $champion;
+
+        return view('projects.show', compact('project'));
+
+    }
 }

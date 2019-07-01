@@ -2,18 +2,16 @@
 @import 'variables';
 
 // Sections
-@import 'championInfo';
 @import 'footer';
 @import 'guides';
+@import 'index';
+@import 'layout';
 @import 'login';
-@import 'navbar';
-@import 'relativeNavbar';
 @import 'searchResults';
 @import 'tierTable';
 @import 'squares';
 @import 'thread';
 @import 'topbar';
-@import 'welcomeContent';
 @import 'wrapper';
 
 body {

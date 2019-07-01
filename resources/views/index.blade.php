@@ -36,25 +36,25 @@
     </div>
     <div class="champion_info">
         <h3>New Champion Information</h3>
-        <div id="key_champs_info_div">
+        <div class="key_champs_info_div">
             <div class="new_champion_div">
-                <div id="text_wrapper">
+                <div class="text_wrapper">
                     <h1 class="new_champ_name">Yuumi</h1>
                     <h5 class="champion_type">Support</h5>
                     <h4 class="champion_slogan">the Magical Cat</h4>
                 </div>
             </div>
-            <div id="free_champs_div">
+            <div class="free_champs_div">
                 <h3>Free To Play Champions</h3>
-                <div id="free_champs_img">
+                <div class="free_champs_img">
                 @foreach ($freeChampions as $champion)
                     <a href="/champion/{{ $champion->key }}"><img src="/datadragon/9.13.1/img/champion/{{ $champion->champId }}.png"></a>
                 @endforeach
                 </div>
             </div>
-            <div id="free_champs_div">
+            <div class="free_champs_div">
                 <h3>Free To Play Champions for New Players Below level 10</h3>
-                <div id="free_champs_img">
+                <div class="free_champs_img">
                 @foreach ($freeChampionsForNewPlayers as $champion)
                     <a href="/champion/{{ $champion->key }}"><img src="/datadragon/9.13.1/img/champion/{{ $champion->champId }}.png"></a>
                 @endforeach

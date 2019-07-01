@@ -19,7 +19,7 @@ class ChampionsController extends Controller
         $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';//?api_key='.env('RIOT_API_KEY');
         $indiv_champion = json_decode(file_get_contents($url))->data->$champId;
 
-        return (array)$indiv_champion;
+        //return (array)$indiv_champion;
 
         return view('champions.show', compact('indiv_champion'));
     }

@@ -1,0 +1,40 @@
+/* Champion Wrapper */
+
+.champion_wrapper {
+    margin-top: 3px;
+	background: #233148;
+	border: 3px solid #0d244e;
+    padding: 5px;
+    height: 100em;
+    .top_left {
+        display: inline-block;
+        img {
+            float: left;
+            height: 10em;
+            margin-right: 0.5em;
+        }
+        h1 {
+            border-left: 0;
+            font-weight: 600;
+            display: inline-block;
+        }
+        h4 {
+            display: inline-block;
+            margin-left: 1em;
+        }
+        h5 {
+            color: #4bb1ff;
+            margin: 0.5em 0.5em;
+        }
+        div {
+            font-size: 1em;
+            font-weight: 600;
+            display: block;
+            padding: 0.7em 1em;
+            border-radius: 2px;
+            &:hover {
+                background: #132138;
+            }
+        }
+    }    
+}

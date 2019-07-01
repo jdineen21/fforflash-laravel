@@ -39,49 +39,49 @@
 /* Champion Info */
 
 .champion_info {
-	margin-top:3px;
-	background:#233148;
-	border:3px solid #0d244e;
-    padding:0.7em;
+	margin-top: 3px;
+	background: #233148;
+	border :3px solid #0d244e;
+    padding: 0.7em;
     h3 {
-        width:721px;
+        width: 721px;
     }
     .key_champs_info_div {
         .new_champion_div {
-            border:2px solid #0d244e;
-            background:url(/datadragon/img/champion/splash/Yuumi_0.jpg);
-            width:731px;
-            height:150px;
-            display:inline-block;
+            border: 2px solid #0d244e;
+            background: url(/datadragon/img/champion/splash/Yuumi_0.jpg);
+            width: 731px;
+            height: 150px;
+            display: inline-block;
             .text_wrapper {
-                padding:10px 0px 0px 25px;
+                padding: 10px 0px 0px 25px;
                 .new_champ_name {
-                    padding:0;
-                    background:0;
-                    border:0;
+                    padding: 0;
+                    background: 0;
+                    border: 0;
                 }
                 .champion_type {
-                    display:inline-block;
-                    color:rgb(75, 177, 255);
-                    margin:0px;
+                    display: inline-block;
+                    color: #4bb1ff;
+                    margin: 0px;
                 }
                 .champion_slogan {
-                    margin:0px;
+                    margin: 0px;
                 }
             }
         }
         .free_champs_div {
-            margin-top:10px;
+            margin-top: 10px;
             h3 {
-                margin:0;
-                width:721px;
+                margin: 0;
+                width: 721px;
             }
             .free_champs_img {
-                margin-top:3px;
+                margin-top: 3px;
                 img {
-                    margin:2px 3px 0px 0px;
-                    width:4em;
-                    height:4em;
+                    margin: 2px 3px 0px 0px;
+                    width: 4em;
+                    height: 4em;
                 }
             }
         }

@@ -23,6 +23,14 @@
                 Donec hendrerit, eros vitae elementum imperdiet, dui neque efficitur ex, ac mollis 
                 justo est quis felis.
             </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a metus nulla. 
+                Etiam est arcu, vulputate a pretium suscipit, dictum id dolor. Nulla facilisi. 
+                Maecenas rutrum ligula a nunc gravida laoreet. In facilisis ante eget lorem 
+                consectetur ultrices. Nullam fringilla leo quis dui interdum vestibulum. 
+                Donec hendrerit, eros vitae elementum imperdiet, dui neque efficitur ex, ac mollis 
+                justo est quis felis.
+            </p>
         </div>
         <img class="logo" src="css/images/logo.png">
     </div>

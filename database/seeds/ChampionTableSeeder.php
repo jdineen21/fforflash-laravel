@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Champion;
+use App\Models\Champion\Champion;
 use App\Models\Champion\Info;
 use App\Models\Champion\Image;
 use App\Models\Champion\Stats;

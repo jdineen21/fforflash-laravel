@@ -20,21 +20,21 @@ class TierListController extends Controller
         //return $champions;
 
         $tierData = [];
-        foreach ($champions as $key => $value) {
-            $tierData[$value->key] = [];
-            $tierData[$value->key]['name'] = $value->name;
-            $tierData[$value->key]['wins'] = 0;
-            $tierData[$value->key]['games'] = 0;
-        }
+        // foreach ($champions as $key => $value) {
+        //     $tierData[$value->key] = [];
+        //     $tierData[$value->key]['name'] = $value->name;
+        //     $tierData[$value->key]['wins'] = 0;
+        //     $tierData[$value->key]['games'] = 0;
+        // }
 
-        foreach ($stats as $key => $value) {
-            $tierData[$value->participant->championId]['wins'] = $tierData[$value->participant->championId]['wins']+$value->win;
-            $tierData[$value->participant->championId]['games'] = $tierData[$value->participant->championId]['games']+1;
-        }
+        // foreach ($stats as $key => $value) {
+        //     $tierData[$value->participant->championId]['wins'] = $tierData[$value->participant->championId]['wins']+$value->win;
+        //     $tierData[$value->participant->championId]['games'] = $tierData[$value->participant->championId]['games']+1;
+        // }
 
-        foreach ($tierData as $key => $value) {
-            $tierData[$key]['winrate'] = round($tierData[$key]['wins']/$tierData[$key]['games']*100, 2);
-        }
+        // foreach ($tierData as $key => $value) {
+        //     $tierData[$key]['winrate'] = round($tierData[$key]['wins']/$tierData[$key]['games']*100, 2);
+        // }
 
         //return $tierData;
 
@@ -46,8 +46,6 @@ class TierListController extends Controller
         //         $tierData[$champ]['games'] = $tierData[$champ]['games'] + 1;
         //     }
         // }
-
-        return $tierData->1;
 
         return view('tier.index', compact('champions', 'tierData'));
     }

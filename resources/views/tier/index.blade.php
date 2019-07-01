@@ -14,7 +14,7 @@
                     <td>Matches</td>
                 </tr>
 
-                @foreach ($tierData as $row)
+                {{-- @foreach ($tierData as $row)
 
                 <tr>
                     <td>NA</td>
@@ -25,7 +25,7 @@
                     <td>522</td>
                 </tr>
 
-				@endforeach
+				@endforeach --}}
                 <tr>
                     <td>1</td>
                     <td>Skarner</td>

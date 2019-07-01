@@ -30,8 +30,10 @@
 					<a href="/tier">Tier List</a>
 				</li>
 				<li>
+					<a href="/champions">Champions</a>
+				</li>
+				<li>
 					<a href="/summoner-info">Summoner Info</a>
-					
 				</li>
 				<li>
 					<a href="/champion-select">Champ Select</a>

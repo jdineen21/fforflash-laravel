@@ -42,7 +42,7 @@
 			float: left;
 			padding: 0.5em;
 			box-sizing: content-box;
-			a {
+			.tab {
 				font-size: 1em;
 				font-weight: 600;
 				display: block;
@@ -51,6 +51,14 @@
 				&:hover {
 					background: #132138;
 				}
+			}
+			.current_tab {
+				font-size: 1em;
+				font-weight: 600;
+				display: block;
+				padding: 0.7em 1em;
+				border-radius: 2px;
+				background: #0b1421;
 			}
 		}
 		.searchbox {

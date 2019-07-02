@@ -20,20 +20,22 @@
         }
         h4 {
             display: inline-block;
-            margin-left: 1em;
+            margin: 0 2 em 0 1em;
         }
         h5 {
             color: #4bb1ff;
             margin: 0.5em 0.5em;
         }
-        div {
+        .queue_type {
             font-size: 1em;
             font-weight: 600;
-            display: block;
+            color: #ffffff;
+            display: inline-block;
             padding: 0.7em 1em;
             border-radius: 2px;
+            background: #132138;
             &:hover {
-                background: #132138;
+                background: #233148;
             }
         }
     }    

@@ -15,10 +15,8 @@
 	<body>
 		<div class="relative_navbar">
 			<div class="navbar_wrapper">
-				<div class="registration">
-					<a href="/">FForFlash.com</a>
-					<p>Providing the most recent patch data and statistics</p>
-				</div>
+				<a href="/">FForFlash.com</a>
+				<p>Providing the most recent patch data and statistics</p>
 			</div>
 		</div>
 		<div class="navbar">

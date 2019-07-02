@@ -2,20 +2,15 @@
 
 .relative_navbar {
 	background:#262626;
-	padding: 0.5em 0;
 	box-shadow: 0 0 30px 0 black;
+	min-width: 100rem;
 }
 
 .navbar_wrapper {
-	width:50%;
-	display: inline;
-	padding-left: 15.5em;
-	
-}
-
-.registration {
-	display: inline-block;
-	padding-right: 35%;
+	padding: 0.5em;
+	margin: 0 auto;
+	width: 100rem;
+	box-sizing: border-box;
 	a {
 		display: inline-block;
 		color: #CBCBC5;
@@ -35,13 +30,14 @@
 
 .navbar {
 	background: #233148;
-	padding-left: 15em;
-	//border-bottom: 3px solid #0d244e;
-	height: 3.6em;
+	display: block;
+	min-width: 100rem;
 	ul {
-		margin: 0;
+		width: 100rem;
+		height: 3.6em;
+		box-sizing: border-box;
+		margin: 0 auto;
 		padding: 0;
-		display: inline-block;
 		li {
 			float: left;
 			padding: 0.5em;

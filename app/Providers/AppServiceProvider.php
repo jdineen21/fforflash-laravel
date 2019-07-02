@@ -33,9 +33,5 @@ class AppServiceProvider extends ServiceProvider
             $champions = Champion::all()->sortBy('name');
             view()->share('champions', $champions);
         }
-        else 
-        {
-            view()->share('champions', []);
-        }
     }
 }

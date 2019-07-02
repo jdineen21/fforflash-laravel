@@ -10,7 +10,6 @@
 		<link rel="shortcut icon" href="css/images/Flash.ico" />
 	</head>
 </head>
-
 <html>
 	<body>
 		<div class="relative_navbar">
@@ -39,15 +38,8 @@
 				<li>
 					<a href="/contact">Contact Us</a>
 				</li>
-				{{-- <li id="logo">
-					<img src="css/images/logo.png"/>
-				</li> --}}
-				<li>
-					<form action="http://www.fforflash.com/search" method="get">
-						<input type="text" name="query" placeholder="Search This Site" class="textbox">
-						{{-- Fix submit button --}}
-						{{-- <a href="/search"><div class="submit_div"></div></a> --}}
-					</form>
+				<li class="searchbox">
+					<input type="text" name="query" placeholder="Search Champion" class="textbox" autocomplete="off">
 				</li>
 			</ul>
 		</div>

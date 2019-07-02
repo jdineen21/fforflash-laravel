@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Support\ServiceProvider;
 
 use App\Models\Champion\Champion;
@@ -26,7 +28,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Pass champion data to all views
-        $champions = Champion::all()->sortBy('name');
-        view()->share('champions', $champions);
+        if (Schema::hasTable('champions')) 
+        {
+            $champions = Champion::all()->sortBy('name');
+            view()->share('champions', $champions);
+        }
+        else 
+        {
+            view()->share('champions', []);
+        }
     }
 }

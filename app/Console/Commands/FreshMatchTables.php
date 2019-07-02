@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class MigrateMatchTables extends Command
+class FreshMatchTables extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'migrate:fresh:match';
+    protected $signature = 'fresh:match';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Run migrations for match database';
+    protected $description = 'Generate Fresh Match Database';
 
     /**
      * Create a new command instance.
@@ -37,11 +37,11 @@ class MigrateMatchTables extends Command
      */
     public function handle()
     {
-        $this->call('migrate:fresh',
-            ['--database' => 'match']
-        );
-        $this->call('migrate',
-            ['--path' => 'database/migrations/match']
-        );
+        $this->info('This will drop database "match"');
+        if ($this->confirm('Do you wish to continue?')) 
+        {
+            $this->call('migrate:fresh', ['--database' => 'match']);
+            $this->call('migrate', ['--path' => 'database/migrations/match']);
+        }
     }
 }

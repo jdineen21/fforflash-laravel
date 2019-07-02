@@ -67,11 +67,11 @@
             <div class="footer">
                 <h3>League of Legends Champions</h3>
                 <div id="champion_links">
-					@foreach ($champions as $champion)
-
-					<a href="/champion/{{ $champion->key }}">{{ $champion->name }}</a>
-
-					@endforeach
+					<ul>
+						@foreach ($champions as $champion)
+						<li><a href="/champion/{{ $champion->key }}">{{ $champion->name }}</a></li>
+						@endforeach
+					</ul>
                 </div>
                 <div id="info_div">
 					<h2>F For Flash</h2>

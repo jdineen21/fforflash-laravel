@@ -21,22 +21,22 @@
 		<div class="navbar">
 			<ul>
 				<li>
-					<a href="/">Home</a>
+					<a class="tab" href="/">Home</a>
 				</li>
 				<li>
-					<a href="/tier">Tier List</a>
+					<a class="tab" href="/tier">Tier List</a>
 				</li>
 				<li>
-					<a href="/champions">Champions</a>
+					<a class="tab" href="/champions">Champions</a>
 				</li>
 				<li>
-					<a href="/summoner">Summoner</a>
+					<a class="tab" href="/summoner">Summoner</a>
 				</li>
 				<li>
-					<a href="/champion-select">Champion Select</a>
+					<a class="tab" href="/champion-select">Champion Select</a>
 				</li>
 				<li>
-					<a href="/contact">Contact Us</a>
+					<a class="tab" href="/contact">Contact Us</a>
 				</li>
 				<li class="searchbox">
 					<input type="text" name="query" placeholder="Search Champion" class="textbox" autocomplete="off">

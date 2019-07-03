@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default class Searchbox extends React.Component {
     
@@ -19,6 +18,17 @@ export default class Searchbox extends React.Component {
         if (e.key === 'Enter') {
         console.log('do validate');
         }
+    }
+
+    componentDidMount() {
+        fetch('http://192.168.0.44:8000/api/search')
+            .then(response => response.json())
+            .then(data => {
+            this.setState({
+                isLoaded: true,
+                data: data,
+            })
+        });
     }
 
     render() {
@@ -47,8 +57,4 @@ const textInputStyle = {
     fontSize: '0.8em',
     borderRadius: '0.4em',
     outline: 'none'
-}
-
-if (document.getElementById('searchbox')) {
-    ReactDOM.render(<Searchbox />, document.getElementById('searchbox'));
 }

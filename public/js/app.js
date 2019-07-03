@@ -61662,82 +61662,16 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/SearchContainer.js":
-/*!****************************************************!*\
-  !*** ./resources/js/components/SearchContainer.js ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchContainer; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Searchbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Searchbox */ "./resources/js/components/Searchbox.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-var SearchContainer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SearchContainer, _React$Component);
-
-  function SearchContainer() {
-    _classCallCheck(this, SearchContainer);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SearchContainer).apply(this, arguments));
-  }
-
-  _createClass(SearchContainer, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Searchbox__WEBPACK_IMPORTED_MODULE_2__["default"], null));
-    }
-  }]);
-
-  return SearchContainer;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-
-if (document.getElementById('searchbox')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Searchbox__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('searchbox'));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/Searchbox.js":
+/***/ "./resources/js/components/SearchBox.js":
 /*!**********************************************!*\
-  !*** ./resources/js/components/Searchbox.js ***!
+  !*** ./resources/js/components/SearchBox.js ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Searchbox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchBox; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -61760,17 +61694,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Searchbox =
+var SearchBox =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Searchbox, _React$Component);
+  _inherits(SearchBox, _React$Component);
 
-  function Searchbox(props) {
+  function SearchBox(props) {
     var _this;
 
-    _classCallCheck(this, Searchbox);
+    _classCallCheck(this, SearchBox);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Searchbox).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBox).call(this, props));
     _this.state = {
       query: ''
     };
@@ -61779,7 +61713,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(Searchbox, [{
+  _createClass(SearchBox, [{
     key: "onChange",
     value: function onChange(e) {
       this.setState({
@@ -61792,20 +61726,6 @@ function (_React$Component) {
       if (e.key === 'Enter') {
         console.log('do validate');
       }
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      fetch('http://192.168.0.44:8000/api/search').then(function (response) {
-        return response.json();
-      }).then(function (data) {
-        _this2.setState({
-          isLoaded: true,
-          data: data
-        });
-      });
     }
   }, {
     key: "render",
@@ -61824,12 +61744,13 @@ function (_React$Component) {
     }
   }]);
 
-  return Searchbox;
+  return SearchBox;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
 var textInputStyle = {
-  width: '30em',
+  boxSizing: 'border-box',
+  width: '440px',
   padding: '0.8em 2em',
   background: '#ffffff',
   border: '0px',
@@ -61837,6 +61758,191 @@ var textInputStyle = {
   fontSize: '0.8em',
   borderRadius: '0.4em',
   outline: 'none'
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/SearchContainer.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/SearchContainer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchContainer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SearchBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchBox */ "./resources/js/components/SearchBox.js");
+/* harmony import */ var _SearchDropDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchDropDown */ "./resources/js/components/SearchDropDown.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var SearchContainer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchContainer, _React$Component);
+
+  function SearchContainer(props) {
+    _classCallCheck(this, SearchContainer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchContainer).call(this, props));
+  }
+
+  _createClass(SearchContainer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this = this;
+
+      fetch('http://192.168.0.44:8000/api/search').then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this.setState({
+          isLoaded: true,
+          data: data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBox__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    }
+  }]);
+
+  return SearchContainer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+if (document.getElementById('searchbox')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SearchContainer, null), document.getElementById('searchbox'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/SearchDropDown.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/SearchDropDown.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchDropDown; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SearchDropDown =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchDropDown, _React$Component);
+
+  function SearchDropDown() {
+    _classCallCheck(this, SearchDropDown);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchDropDown).apply(this, arguments));
+  }
+
+  _createClass(SearchDropDown, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: containerStyle
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        style: listStyle
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        style: listItemStyle
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        style: imgStyle,
+        src: "/datadragon/9.13.1/img/champion/Galio.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: championNameStyle
+      }, "Galio"))));
+    }
+  }]);
+
+  return SearchDropDown;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+var containerStyle = {
+  boxSizing: 'border-box',
+  width: '440px',
+  background: '#ffffff',
+  borderRadius: '0.2em',
+  marginTop: '-5px',
+  position: 'relative'
+};
+var listStyle = {
+  boxSizing: 'border-box',
+  display: 'inline-block',
+  width: '440px',
+  position: 'relative'
+};
+var listItemStyle = {
+  padding: '0.4em 1em',
+  position: 'relative'
+};
+var imgStyle = {
+  width: '30px',
+  "float": 'left',
+  border: '0',
+  position: 'relative'
+};
+var championNameStyle = {
+  display: 'inline-block',
+  "float": 'left',
+  color: '#000',
+  margin: '0 0 0 20px',
+  fontWeight: '600',
+  fontSize: '1.5em',
+  position: 'relative'
 };
 
 /***/ }),

@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default class Searchbox extends React.Component {
-    
+export default class SearchBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {query: ''};
@@ -18,17 +17,6 @@ export default class Searchbox extends React.Component {
         if (e.key === 'Enter') {
         console.log('do validate');
         }
-    }
-
-    componentDidMount() {
-        fetch('http://192.168.0.44:8000/api/search')
-            .then(response => response.json())
-            .then(data => {
-            this.setState({
-                isLoaded: true,
-                data: data,
-            })
-        });
     }
 
     render() {
@@ -49,7 +37,8 @@ export default class Searchbox extends React.Component {
 }
 
 const textInputStyle = {
-    width: '30em',
+    boxSizing: 'border-box',
+    width: '440px',
     padding: '0.8em 2em',
     background: '#ffffff',
     border: '0px',

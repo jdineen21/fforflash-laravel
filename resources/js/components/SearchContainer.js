@@ -6,6 +6,20 @@ import SearchDropDown from './SearchDropDown';
 export default class SearchContainer extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            query: ''
+        };
+
+        this.SearchBox = this.SearchBox.bind(this);
+    }
+
+    SearchBox(query) {
+        const inputValue = query.trim().toLowerCase();
+        const inputLength = query.length;
+        
+        console.log(inputLength === 0 ? [] : this.state.data.filter(lang =>
+            lang.name.toLowerCase().slice(0, inputLength) === inputValue
+        ));
     }
 
     componentDidMount() {
@@ -22,7 +36,7 @@ export default class SearchContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                <SearchBox />
+                <SearchBox SearchBox={this.SearchBox} />
                 {/* <SearchDropDown /> */}
             </div>
         )

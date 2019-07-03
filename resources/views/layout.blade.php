@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="{{asset('js/app.js')}}" defer></script>
     <head>
 		<title>F For Flash | League of Legends</title>
 		<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css" />
@@ -38,9 +39,7 @@
 				<li>
 					<a class="tab" href="/contact">Contact Us</a>
 				</li>
-				<li class="searchbox">
-					<input type="text" name="query" placeholder="Search Champion" class="textbox" autocomplete="off">
-				</li>
+				<li id="searchbox"></li>
 			</ul>
 		</div>
 		<div class="wrapper">

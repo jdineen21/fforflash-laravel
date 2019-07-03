@@ -22,3 +22,5 @@ Route::get('/champion/{champion}', 'ChampionsController@show');
 Route::get('/test', 'TestController@index');
 
 Route::get('/archive', 'ArchiveController@index');
+
+Route::get('/api/search', 'ApiSearchController@show');

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\URL;
 
 use App\Models\Champion\Champion;
-use App\Models\NavbarTab;
 
 class LayoutServiceProvider extends ServiceProvider
 {

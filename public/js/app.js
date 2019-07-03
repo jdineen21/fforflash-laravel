@@ -61686,9 +61686,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -61702,26 +61702,36 @@ var Searchbox =
 function (_React$Component) {
   _inherits(Searchbox, _React$Component);
 
-  function Searchbox() {
+  function Searchbox(props) {
+    var _this;
+
     _classCallCheck(this, Searchbox);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Searchbox).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Searchbox).call(this, props));
+    _this.state = {
+      query: ''
+    };
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
+    _this.handleKeyDown = _this.handleKeyDown.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Searchbox, [{
+    key: "onChange",
+    value: function onChange(e) {
+      this.setState({
+        query: e.target.value
+      });
+    }
+  }, {
+    key: "handleKeyDown",
+    value: function handleKeyDown(e) {
+      if (e.key === 'Enter') {
+        console.log('do validate');
+      }
+    }
+  }, {
     key: "render",
-    // constructor() {
-    //     super(props);
-    //     this.state = {
-    //         query: ''
-    //     };
-    // }
-    // onChange = (e) => this.setState({ query: e.target.value });
-    // _handleKeyDown = (e) => {
-    //     if (e.key === 'Enter') {
-    //     console.log('do validate');
-    //     }
-    // }
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         style: textInputStyle,
@@ -61729,10 +61739,10 @@ function (_React$Component) {
         name: "query",
         placeholder: "Search Champion",
         className: "textbox",
-        autoComplete: "off" // value={this.state.query}
-        // onChange={this.onChange}
-        // onKeyDown={this._handleKeyDown}
-
+        autoComplete: "off",
+        value: this.state.query,
+        onChange: this.onChange,
+        onKeyDown: this.handleKeyDown
       });
     }
   }]);

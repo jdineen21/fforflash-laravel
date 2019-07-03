@@ -2,20 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Searchbox extends React.Component {
-    // constructor() {
-    //     super(props);
-    //     this.state = {
-    //         query: ''
-    //     };
-    // }
     
-    // onChange = (e) => this.setState({ query: e.target.value });
+    constructor(props) {
+        super(props);
+        this.state = {query: ''};
 
-    // _handleKeyDown = (e) => {
-    //     if (e.key === 'Enter') {
-    //     console.log('do validate');
-    //     }
-    // }
+        this.onChange = this.onChange.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+    }
+    
+    onChange(e) {
+        this.setState({ query: e.target.value });
+    } 
+
+    handleKeyDown(e) {
+        if (e.key === 'Enter') {
+        console.log('do validate');
+        }
+    }
 
     render() {
         return (
@@ -26,9 +30,9 @@ export default class Searchbox extends React.Component {
                 placeholder="Search Champion"
                 className="textbox"
                 autoComplete="off"
-                // value={this.state.query}
-                // onChange={this.onChange}
-                // onKeyDown={this._handleKeyDown}
+                value={this.state.query}
+                onChange={this.onChange}
+                onKeyDown={this.handleKeyDown}
             />
         );
     }

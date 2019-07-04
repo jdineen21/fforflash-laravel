@@ -64784,7 +64784,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchContainer).call(this, props));
     _this.state = {
-      query: ''
+      isLoaded: false,
+      data: [],
+      predicts: []
     };
     _this.SearchBox = _this.SearchBox.bind(_assertThisInitialized(_this));
     return _this;
@@ -64795,16 +64797,19 @@ function (_React$Component) {
     value: function SearchBox(query) {
       var inputValue = query.trim().toLowerCase();
       var inputLength = query.length;
-      console.log(inputLength === 0 ? [] : this.state.data.filter(function (lang) {
+      var predicts = inputLength === 0 ? [] : this.state.data.filter(function (lang) {
         return lang.name.toLowerCase().slice(0, inputLength) === inputValue;
-      }));
+      });
+      this.setState({
+        predicts: predicts
+      });
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('http://192.168.0.44:8000/api/search').then(function (response) {
+      fetch('http://127.0.0.1:8000/api/search').then(function (response) {
         return response.json();
       }).then(function (data) {
         _this2.setState({
@@ -64820,6 +64825,8 @@ function (_React$Component) {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBox__WEBPACK_IMPORTED_MODULE_2__["default"], {
         SearchBox: this.SearchBox
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchDropDown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        predicts: this.state.predicts
       }));
     }
   }]);
@@ -64872,27 +64879,42 @@ var SearchDropDown =
 function (_React$Component) {
   _inherits(SearchDropDown, _React$Component);
 
-  function SearchDropDown() {
+  function SearchDropDown(props) {
+    var _this;
+
     _classCallCheck(this, SearchDropDown);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SearchDropDown).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchDropDown).call(this, props));
+    _this.state = {
+      predicts: []
+    }; //this.predicts = this.predicts.bind(this);
+
+    return _this;
   }
 
   _createClass(SearchDropDown, [{
+    key: "handlePredicts",
+    value: function handlePredicts() {
+      console.log(this.props.predicts);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: containerStyle
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        style: listStyle
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        style: listItemStyle
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        style: imgStyle,
-        src: "/datadragon/9.13.1/img/champion/Galio.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: championNameStyle
-      }, "Galio"))));
+      //console.log(this.props.predicts);
+      return this.props.predicts.map(function (todo) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: containerStyle
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          style: listStyle
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          style: listItemStyle
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          style: imgStyle,
+          src: "/datadragon/9.13.1/img/champion/" + todo.champId + ".png"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          style: championNameStyle
+        }, todo.name))));
+      });
     }
   }]);
 
@@ -64906,23 +64928,22 @@ var containerStyle = {
   background: '#ffffff',
   borderRadius: '0.2em',
   marginTop: '-5px',
-  position: 'relative'
+  position: 'relative',
+  left: '0'
 };
 var listStyle = {
   boxSizing: 'border-box',
   display: 'inline-block',
   width: '440px',
-  position: 'relative'
+  margin: '0'
 };
 var listItemStyle = {
-  padding: '0.4em 1em',
-  position: 'relative'
+  padding: '0.4em 1em'
 };
 var imgStyle = {
   width: '30px',
   "float": 'left',
-  border: '0',
-  position: 'relative'
+  border: '0'
 };
 var championNameStyle = {
   display: 'inline-block',
@@ -64930,8 +64951,7 @@ var championNameStyle = {
   color: '#000',
   margin: '0 0 0 20px',
   fontWeight: '600',
-  fontSize: '1.5em',
-  position: 'relative'
+  fontSize: '1.5em'
 };
 
 /***/ }),

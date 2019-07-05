@@ -13,7 +13,7 @@
         </div>
         <div class="champion_skills">
             {{-- Needs work --}}
-            <div class="champion_skill_row">
+            <div class="champion_passive_row">
                 <img src="/datadragon/9.13.1/img/passive/{{ $indiv_champion->passive->image->full }}">
             </div>
             @foreach ($indiv_champion->spells as $spell_key => $spell)
@@ -21,7 +21,7 @@
                 <img src="/datadragon/9.13.1/img/spell/{{ $spell->image->full }}">
                 @foreach ($skill_pattern as $key => $x)
                     @if ($x == $spell_key)
-                        <div class="champion_skill_data_active"><div>{{ $key+1 }}</div></div>
+                        <div class="champion_skill_data_active">{{ $key+1 }}</div>
                     @else
                         <div class="champion_skill_data"></div>
                     @endif

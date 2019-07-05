@@ -7,7 +7,7 @@
     padding: 2em 5em;
     height: 100em;
     .top_left {
-        display: inline-block;
+        height: 12em;
         img {
             float: left;
             height: 10em;
@@ -41,28 +41,32 @@
 
 .champion_skills {
     margin-top: 3em;
+    display: inline-block;
     img {
         box-sizing: border-box;
-        height: 40px;
+        height: 37px;
+    }
+    .champion_passive_row {
+
     }
     .champion_skill_row {
+        margin-bottom: -8px;
         div {
             box-sizing: border-box;
             background: #202d42;
-            height: 40px;
-            width: 40px;
+            height: 37px;
+            width: 37px;
             display: inline-block;
             text-align: center;
         }
         .champion_skill_data_active {
             position: relative;
             bottom: 13px;
-            div {
-                padding-top: 10px;
-                background: #3175a8;
-                font-weight: 600;
-                color: #ffffff;
-            }
+            background: #3175a8;
+            font-weight: 600;
+            color: #ffffff;
+            padding-top: 8px;
+            bottom: 12px;
         }
     }
 }

@@ -25,7 +25,7 @@ export default class SearchContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch('api/search')
+        fetch('/api/search')
             .then(response => response.json())
             .then(data => {
             this.setState({

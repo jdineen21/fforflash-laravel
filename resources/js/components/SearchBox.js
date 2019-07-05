@@ -25,13 +25,11 @@ export default class SearchBox extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="input_container">
                 <input 
-                    style={textInputStyle}
                     type="text" 
                     name="query"
                     placeholder="Search Champion"
-                    className="textbox"
                     autoComplete="off"
                     value={this.state.query}
                     onChange={this.onChange}
@@ -40,16 +38,4 @@ export default class SearchBox extends React.Component {
             </div>
         );
     }
-}
-
-const textInputStyle = {
-    boxSizing: 'border-box',
-    width: '440px',
-    padding: '0.8em 2em',
-    background: '#ffffff',
-    border: '0px',
-    color: '#000000',
-    fontSize: '0.8em',
-    borderRadius: '0.4em',
-    outline: 'none',
 }

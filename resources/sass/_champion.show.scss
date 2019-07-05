@@ -4,39 +4,65 @@
     margin-top: 3px;
 	background: #233148;
 	border: 3px solid #0d244e;
-    padding: 5px;
+    padding: 2em 5em;
     height: 100em;
     .top_left {
         display: inline-block;
         img {
             float: left;
             height: 10em;
-            margin-right: 0.5em;
+            border-radius: 50%;
         }
-        h1 {
-            border-left: 0;
-            font-weight: 600;
+        div {
+            // background: #132138;
+            // border: 2px solid #0d244e;
+            // border-radius: 0.1em;
             display: inline-block;
-        }
-        h4 {
-            display: inline-block;
-            margin: 0 2 em 0 1em;
-        }
-        h5 {
-            color: #4bb1ff;
-            margin: 0.5em 0.5em;
-        }
-        .queue_type {
-            font-size: 1em;
-            font-weight: 600;
-            color: #ffffff;
-            display: inline-block;
-            padding: 0.7em 1em;
-            border-radius: 2px;
-            background: #132138;
-            &:hover {
-                background: #233148;
+            padding: 0 1.2em 0.8em 1.2em ;
+            margin-left: 2em; 
+            h1 {
+                border-left: 0;
+                font-weight: 600;
+                font-size: 3em;
+                padding: 0;
+                background: 0;
+                border: 0;
+            }
+            h4 {
+                margin: 0 2 em 0 1em;
+            }
+            h5 {
+                color: #4bb1ff;
+                margin: 0;
             }
         }
     }    
+}
+
+.champion_skills {
+    margin-top: 3em;
+    img {
+        box-sizing: border-box;
+        height: 40px;
+    }
+    .champion_skill_row {
+        div {
+            box-sizing: border-box;
+            background: #202d42;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            text-align: center;
+        }
+        .champion_skill_data_active {
+            position: relative;
+            bottom: 13px;
+            div {
+                padding-top: 10px;
+                background: #3175a8;
+                font-weight: 600;
+                color: #ffffff;
+            }
+        }
+    }
 }

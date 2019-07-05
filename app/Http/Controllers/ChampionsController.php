@@ -21,6 +21,8 @@ class ChampionsController extends Controller
 
         //return (array)$indiv_champion;
 
-        return view('champions.show', compact('indiv_champion'));
+        $skill_pattern = [0, 1, 2, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1];
+
+        return view('champions.show', compact('indiv_champion', 'skill_pattern'));
     }
 }

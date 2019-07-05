@@ -64701,7 +64701,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         style: textInputStyle,
         type: "text",
         name: "query",
@@ -64711,7 +64711,7 @@ function (_React$Component) {
         value: this.state.query,
         onChange: this.onChange,
         onKeyDown: this.handleKeyDown
-      });
+      }));
     }
   }]);
 
@@ -64822,12 +64822,14 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
+        style: dropDown
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBox__WEBPACK_IMPORTED_MODULE_2__["default"], {
         SearchBox: this.SearchBox
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchDropDown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: dropDownContent
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchDropDown__WEBPACK_IMPORTED_MODULE_3__["default"], {
         predicts: this.state.predicts
-      }));
+      })));
     }
   }]);
 
@@ -64835,6 +64837,22 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
+var dropDown = {
+  margin: '0.7em 0 0 0.5em',
+  position: 'relative',
+  display: 'inline-block'
+};
+var dropDownContent = {
+  boxSizing: 'border-box',
+  width: '440px',
+  border: '0px',
+  background: '#fff',
+  borderRadius: '0.3em',
+  marginTop: '-5px',
+  fontSize: '0.8em',
+  position: 'absolute',
+  zIndex: '1'
+};
 
 if (document.getElementById('searchbox')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SearchContainer, null), document.getElementById('searchbox'));
@@ -64880,16 +64898,9 @@ function (_React$Component) {
   _inherits(SearchDropDown, _React$Component);
 
   function SearchDropDown(props) {
-    var _this;
-
     _classCallCheck(this, SearchDropDown);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchDropDown).call(this, props));
-    _this.state = {
-      predicts: []
-    }; //this.predicts = this.predicts.bind(this);
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchDropDown).call(this, props));
   }
 
   _createClass(SearchDropDown, [{
@@ -64900,20 +64911,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      //console.log(this.props.predicts);
       return this.props.predicts.map(function (todo) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          style: containerStyle
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          style: listStyle
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           style: listItemStyle
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "/champion/" + todo.key
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           style: imgStyle,
           src: "/datadragon/9.13.1/img/champion/" + todo.champId + ".png"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           style: championNameStyle
-        }, todo.name))));
+        }, todo.name)));
       });
     }
   }]);
@@ -64922,23 +64930,9 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
-var containerStyle = {
-  boxSizing: 'border-box',
-  width: '440px',
-  background: '#ffffff',
-  borderRadius: '0.2em',
-  marginTop: '-5px',
-  position: 'relative',
-  left: '0'
-};
-var listStyle = {
-  boxSizing: 'border-box',
-  display: 'inline-block',
-  width: '440px',
-  margin: '0'
-};
 var listItemStyle = {
-  padding: '0.4em 1em'
+  padding: '0.4em 1em',
+  height: '3em'
 };
 var imgStyle = {
   width: '30px',
@@ -64946,7 +64940,6 @@ var imgStyle = {
   border: '0'
 };
 var championNameStyle = {
-  display: 'inline-block',
   "float": 'left',
   color: '#000',
   margin: '0 0 0 20px',

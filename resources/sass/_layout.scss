@@ -62,17 +62,8 @@
 			}
 		}
 		#searchbox {
-			padding-top: 0.75em; 
-			input {
-				width: 30em;
-				padding: 0.8em 2em;
-				background: #ffffff;
-				border: 0px;
-				color: #000000;
-				font-size: 0.8em;
-				border-radius: 0.4em;
-				outline: none;
-			}
+			padding: 0;
+			position: relative;
 		}
 	}
 }

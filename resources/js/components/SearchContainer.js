@@ -37,12 +37,32 @@ export default class SearchContainer extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div style={dropDown}>
                 <SearchBox SearchBox={this.SearchBox} />
-                <SearchDropDown  predicts={this.state.predicts} />
+                <div style={dropDownContent}>
+                    <SearchDropDown  predicts={this.state.predicts} />
+                </div>
             </div>
         )
     }
+}
+
+const dropDown = {
+    margin: '0.7em 0 0 0.5em',
+    position: 'relative',
+    display: 'inline-block',
+}
+
+const dropDownContent = {
+    boxSizing: 'border-box',
+    width: '440px',
+    border: '0px',
+    background: '#fff',
+    borderRadius: '0.3em',
+    marginTop: '-5px',
+    fontSize: '0.8em',
+    position: 'absolute',
+    zIndex: '1',
 }
 
 if (document.getElementById('searchbox')) {

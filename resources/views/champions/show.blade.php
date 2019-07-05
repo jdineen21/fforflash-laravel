@@ -8,7 +8,9 @@
             <div>
                 <h1>{{ $indiv_champion->name }}</h1>
                 <h4>{{ $indiv_champion->title }}</h4>
-                <h5>{{ $indiv_champion->tags[0] }}</h5>
+                @foreach ($indiv_champion->tags as $tag)
+                <h5>{{ $tag }}</h5>
+                @endforeach
             </div>
         </div>
         <div class="champion_stats">

@@ -39,6 +39,20 @@
     }    
 }
 
+.champion_stats {
+    margin-top: 1em;
+    .champion_stats_data {
+        display: inline-block;
+        width: 24%;
+        text-align: center;
+        h1 {
+            font-size: 2em;
+            background: 0;
+            border: 0;
+        }
+    }
+}
+
 .champion_skills {
     margin-top: 3em;
     display: inline-block;

@@ -11,6 +11,24 @@
                 <h5>{{ $indiv_champion->tags[0] }}</h5>
             </div>
         </div>
+        <div class="champion_stats">
+            <div class="champion_stats_data">
+                <h1>51.84%</h1>
+                <p>Win Rate</p>
+            </div>
+            <div class="champion_stats_data">
+                <h1>7.0%</h1>
+                <p>Pick Rate</p>
+            </div>
+            <div class="champion_stats_data">
+                <h1>12.6%</h1>
+                <p>Ban Rate</p>
+            </div>
+            <div class="champion_stats_data">
+                <h1>67,864</h1>
+                <p>Matches</p>
+            </div>
+        </div>
         <div class="champion_skills">
             {{-- Needs work --}}
             <div class="champion_passive_row">

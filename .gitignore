@@ -5,6 +5,7 @@
 /public/css
 /public/storage
 /public/datadragon
+/public/js
 /storage/*.key
 /vendor
 /html

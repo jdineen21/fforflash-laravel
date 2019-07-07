@@ -4,7 +4,7 @@
 
     <div class="champion_wrapper">
         <div class="top_left">
-            <img src="/datadragon/9.13.1/img/champion/{{ $indiv_champion->id }}.png">
+            <img src="/datadragon/img/champion/tiles/{{ $indiv_champion->id }}_0.jpg">
             <div>
                 <h1>{{ $indiv_champion->name }}</h1>
                 <h4>{{ $indiv_champion->title }}</h4>

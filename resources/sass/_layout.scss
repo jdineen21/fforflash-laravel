@@ -99,6 +99,13 @@
 		.dropdown_row {
 			margin: 0.4em 1em;
 			height: 3em;
+			padding: 0.2em;
+			&:hover {
+				background: #132138;
+			}
+			&:hover p {
+				color: #fff;
+			}
 			div {
 				height: 3em;
 			}
@@ -106,11 +113,12 @@
 				width: 30px;
 				float: left;
 				border: 0;
+				margin: 5px 0 0 10px;
 			}
 			p {
 				float: left;
 				color: #000;
-				margin: 5px 0 0 20px;
+				margin: 8px 0 0 15px;
 				font-weight: 600;
 				font-size: 1.2em;
 			}

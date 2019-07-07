@@ -10,8 +10,18 @@ class Participant extends Model
     protected $table = 'participants';
     protected $primaryKey = 'id';
 
+    public function match() 
+    {
+        return $this->belongsTo('App\Models\Match\Match');
+    }
+
     public function stats() 
     {
         return $this->hasOne('App\Models\Match\Stats');
+    }
+
+    public function team() 
+    {
+        return $this->hasOne('App\Models\Match\Team');
     }
 }

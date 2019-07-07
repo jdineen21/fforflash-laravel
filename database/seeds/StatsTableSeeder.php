@@ -20,6 +20,7 @@ class StatsTableSeeder extends Seeder
 
         $schema = Schema::connection('match')->getColumnListing('stats');
 
+        // Unset all primary and foreign keys
         unset($schema[0]);
         unset($schema[1]);
 

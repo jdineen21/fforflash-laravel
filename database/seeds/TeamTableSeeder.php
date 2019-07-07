@@ -20,10 +20,12 @@ class TeamTableSeeder extends Seeder
 
         $schema = Schema::connection('match')->getColumnListing('teams');
 
-        dd($schema);
-
+        // Unset all primary and foreign keys
         unset($schema[0]);
         unset($schema[1]);
+        unset($schema[2]);
+
+        //dd($schema);
 
         $items = [];
         foreach ($matches as $m => $value) 
@@ -33,23 +35,7 @@ class TeamTableSeeder extends Seeder
             {
                 foreach ($data->teams as $t => $value) 
                 {
-                    if (!$data->participantIdentities[$p]->player->accountId == '0') 
-                    {
-                        $stat = [];
-                        $stat['participant_id'] = count($items)+1;
-                        foreach ($schema as $key => $value) 
-                        {
-                            if (isset($data->participants[$p]->stats->$value))
-                            {
-                                $stat[$value] = $data->participants[$p]->stats->$value;
-                            }
-                            else
-                            {
-                                $stat[$value] = null;
-                            }
-                        }
-                        array_push($items, $stat);
-                    }
+                    dd($value);
                 }
             }   
         }

@@ -15,6 +15,7 @@ class CreateTeamsTable extends Migration
     {
         Schema::connection('match')->create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('participantId');
             $table->integer('gameId');
             $table->integer('baronKills')->nullable();
             $table->integer('dominionVictoryScore')->nullable();
@@ -32,6 +33,7 @@ class CreateTeamsTable extends Migration
             $table->integer('vilemawKills')->nullable();
             $table->string('win')->nullable();
 
+            $table->foreign('participantId')->references('id')->on('participants');
             $table->foreign('gameId')->references('gameId')->on('matches');
         });
     }

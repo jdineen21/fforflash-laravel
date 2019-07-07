@@ -27,7 +27,7 @@
                 <p>Ban Rate</p>
             </div>
             <div class="champion_stats_data">
-                <h1>67,864</h1>
+                <h1>{{ $base_model->matches }}</h1>
                 <p>Matches</p>
             </div>
         </div>

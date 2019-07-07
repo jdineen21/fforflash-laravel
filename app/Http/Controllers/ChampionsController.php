@@ -22,9 +22,9 @@ class ChampionsController extends Controller
         $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';//?api_key='.env('RIOT_API_KEY');
         $indiv_champion = json_decode(file_get_contents($url))->data->$champId;
 
-        $match = Match::all();
+        //$match = Match::all();
 
-        return $match[0]->participant[0]->team;
+        //return $match[0]->participant[0]->team;
 
 
         //$matches = Participant::select('gameId')->where('championId', $champion->key)->get();

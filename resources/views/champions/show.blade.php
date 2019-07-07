@@ -15,11 +15,11 @@
         </div>
         <div class="champion_stats">
             <div class="champion_stats_data">
-                <h1>51.84%</h1>
+                <h1>{{ $champion_stats->win_rate }}%</h1>
                 <p>Win Rate</p>
             </div>
             <div class="champion_stats_data">
-                <h1>7.0%</h1>
+                <h1>{{ $champion_stats->pick_rate }}%</h1>
                 <p>Pick Rate</p>
             </div>
             <div class="champion_stats_data">
@@ -27,7 +27,7 @@
                 <p>Ban Rate</p>
             </div>
             <div class="champion_stats_data">
-                <h1>61,875</h1>
+                <h1>{{ $champion_stats->matches }}</h1>
                 <p>Matches</p>
             </div>
         </div>

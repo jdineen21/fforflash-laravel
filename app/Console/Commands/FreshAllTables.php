@@ -40,11 +40,11 @@ class FreshAllTables extends Command
         $this->info('This will drop all databases');
         if ($this->confirm('Do you wish to continue?')) 
         {
+            $this->call('migrate:fresh', ['--database' => 'content']);
             $this->call('migrate:fresh', ['--database' => 'static']);
+
+            $this->call('migrate', ['--path' => 'database/migrations/content']);
             $this->call('migrate', ['--path' => 'database/migrations/static']);
-            
-            $this->call('migrate:fresh', ['--database' => 'match']);
-            $this->call('migrate', ['--path' => 'database/migrations/match']);
         }
     }
 }

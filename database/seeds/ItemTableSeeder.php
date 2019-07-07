@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Item;
+use App\Models\Item\Item;
 use App\Models\Item\Image;
 use App\Models\Item\Gold;
 use App\Models\Item\Maps;

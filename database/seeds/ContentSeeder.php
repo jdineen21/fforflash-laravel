@@ -56,9 +56,10 @@ class ContentSeeder extends Seeder
                     }
                     else 
                     {
-                        $wins = Wins::find($champion_image_row['id'])->wins+$participant->stats->win;
-                        $matches = Wins::find($champion_image_row['id'])->matches+1;
-                        Wins::where('id', $champion_image_row['id'])->update(['wins' => $wins, 'matches' => $matches]);
+                        $wins_row = Wins::find($champion_image_row['id']);
+                        $wins = $wins_row->wins+$participant->stats->win;
+                        $matches = $wins_row->matches+1;
+                        $wins_row->update(['wins' => $wins, 'matches' => $matches]);
                     }
 
                     // End Slow AF

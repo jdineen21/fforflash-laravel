@@ -29,21 +29,21 @@ class ChampionsController extends Controller
 
         $dataset_size = count($matches_raw);
 
-        $matches = MatchParam::where([
+        $champion = MatchParam::where([
             ['championKey', $champion->key], 
             ['queueId', 420]
-        ])->first()->wins()->get();
+        ])->first();
 
-        return $matches;
+        $champion_wins = $champion->wins()->get()->first();
+        $wins = $champion_wins->wins;
+        $matches = $champion_wins->matches;
+
+        //return $champion_wins;
 
         $champion_stats = new BaseModel;
-        $wins = 0;
-        foreach ($matches as $match) {
-            $wins = $wins + $match->win;
-        }
-        $champion_stats->win_rate = round($wins/count($matches)*100, 2);
-        $champion_stats->pick_rate = round((count($matches)/$dataset_size)*100, 2);
-        $champion_stats->matches = count($matches);
+        $champion_stats->win_rate = round(($wins/$matches)*100, 2);
+        $champion_stats->pick_rate = round(($matches/$dataset_size)*100, 2);
+        $champion_stats->matches = $matches;
 
         $skill_pattern = [0, 1, 2, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1];
 

@@ -12,6 +12,6 @@ class MatchParam extends Model
 
     public function wins() 
     {
-        return $this->hasMany('App\Models\Content\Wins', 'matchParamId', 'id');
+        return $this->hasMany('App\Models\Content\Wins', 'id', 'id');
     }
 }

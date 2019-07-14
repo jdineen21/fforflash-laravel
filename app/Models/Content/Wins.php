@@ -12,6 +12,6 @@ class Wins extends Model
 
     public function match_param() 
     {
-        return $this->belongsTo('App\Models\Content\MatchParam', 'id', 'matchParamId');
+        return $this->belongsTo('App\Models\Content\MatchParam', 'id', 'id');
     }
 }

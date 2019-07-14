@@ -61,6 +61,8 @@ class ContentSeeder extends Seeder
                         Wins::where('id', $champion_image_row['id'])->update(['wins' => $wins, 'matches' => $matches]);
                     }
 
+                    // End Slow AF
+
                     $this->command->getOutput()->progressAdvance();
                 }
             }

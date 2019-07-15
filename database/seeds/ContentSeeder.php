@@ -19,9 +19,14 @@ class ContentSeeder extends Seeder
         $seedData = fread($seedFile, filesize($path));
         $matches_raw = array_unique(explode(PHP_EOL, $seedData));
 
+        echo('Main Loop 1/2'.PHP_EOL);
         $this->command->getOutput()->progressStart(count($matches_raw)*10);
 
-        $champion_image_items = [];
+        $match_param_pkey = [];
+        $match_param_rows = [];
+
+        $wins_pkey = [];
+        $wins_rows = [];
         foreach ($matches_raw as $match_raw) 
         {
             $match = json_decode($match_raw);
@@ -29,6 +34,7 @@ class ContentSeeder extends Seeder
             {
                 foreach ($match->participants as $participant) 
                 {
+                    // Match Param Table
                     $match_param_row = [
                         'championKey' => $participant->championId,
                         'queueId' => $match->queueId,
@@ -37,36 +43,69 @@ class ContentSeeder extends Seeder
                     ];
                     $match_param_row['id'] = unpack('V2', hash('sha256', implode('.', $match_param_row), true))[1];
 
-                    if (!MatchParam::find($match_param_row['id'])) 
+                    if (!in_array($match_param_row['id'], $match_param_pkey)) 
                     {
-                        MatchParam::insert($match_param_row);
+                        array_push($match_param_pkey, $match_param_row['id']);
+                        array_push($match_param_rows, $match_param_row);
                     }
 
-                    // Slow AF
-
-                    $champion_image_row = [
+                    // Wins Table
+                    $wins_row = [
                         'id' => $match_param_row['id'],
-                        'wins' => $participant->stats->win,
+                        'wins' => (int)$participant->stats->win,
                         'matches' => 1,
                     ];
-                    
-                    if (!Wins::find($champion_image_row['id'])) 
+
+                    if (!in_array($match_param_row['id'], $wins_pkey)) 
                     {
-                        Wins::insert($champion_image_row);
+                        array_push($wins_pkey, $match_param_row['id']);
+                        array_push($wins_rows, $wins_row);
                     }
                     else 
                     {
-                        $wins_row = Wins::find($champion_image_row['id']);
-                        $wins = $wins_row->wins+$participant->stats->win;
-                        $matches = $wins_row->matches+1;
-                        $wins_row->update(['wins' => $wins, 'matches' => $matches]);
+                        $key = array_search($match_param_row['id'], $wins_pkey);
+                        $wins_rows[$key]['wins'] += (int)$participant->stats->win;
+                        $wins_rows[$key]['matches'] += 1;
                     }
-
-                    // End Slow AF
 
                     $this->command->getOutput()->progressAdvance();
                 }
             }
         }
+        $this->command->getOutput()->progressFinish();
+        echo('Match Param Batch Insert 2/3'.PHP_EOL);
+        $this->command->getOutput()->progressStart(count($wins_rows));
+
+        $batch = [];
+        foreach ($match_param_rows as $key => $value) 
+        {
+            array_push($batch, $value);
+            if (count($batch) == 100) 
+            {
+                MatchParam::insert($batch);
+                $batch = [];
+            }
+            $this->command->getOutput()->progressAdvance();
+        }
+        MatchParam::insert($batch);
+
+        $this->command->getOutput()->progressFinish();
+        echo('Wins Batch Insert 3/3'.PHP_EOL);
+        $this->command->getOutput()->progressStart(count($wins_rows));
+
+        $batch = [];
+        foreach ($wins_rows as $key => $value) 
+        {
+            array_push($batch, $value);
+            if (count($batch) == 100) 
+            {
+                Wins::insert($batch);
+                $batch = [];
+            }
+            $this->command->getOutput()->progressAdvance();
+        }
+        Wins::insert($batch);
+
+        $this->command->getOutput()->progressFinish();
     }
 }

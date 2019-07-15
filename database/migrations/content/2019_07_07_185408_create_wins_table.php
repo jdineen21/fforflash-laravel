@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkillTable extends Migration
+class CreateWinsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateSkillTable extends Migration
      */
     public function up()
     {
-        Schema::connection('cache')->create('skill', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::connection('content')->create('wins', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->integer('wins');
+            $table->integer('matches');
             $table->timestamps();
+
+            $table->foreign('id')->references('id')->on('match_param');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateSkillTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skill');
+        Schema::connection('content')->dropIfExists('wins');
     }
 }

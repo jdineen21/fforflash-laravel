@@ -14,11 +14,5 @@ class DatabaseSeeder extends Seeder
         // Static database seeding
         $this->call(ChampionTableSeeder::class);
         $this->call(ItemTableSeeder::class);
-        
-        // Match database seeding
-        $this->call(MatchTableSeeder::class);
-        $this->call(PlayerTableSeeder::class);
-        $this->call(ParticipantTableSeeder::class);
-        $this->call(StatsTableSeeder::class);
     }
 }

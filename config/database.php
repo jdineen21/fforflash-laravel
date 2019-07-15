@@ -35,25 +35,15 @@ return [
 
     'connections' => [
 
-        'cache' => [
+        'content' => [
             'driver' => 'sqlite',
-            //'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE_CACHE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
-        ],
-
-        'match' => [
-            'driver' => 'sqlite',
-            //'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE_MATCH'),
+            'database' => env('DB_DATABASE_CONTENT'),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
         'static' => [
             'driver' => 'sqlite',
-            //'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE_STATIC'),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),

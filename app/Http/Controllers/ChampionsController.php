@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Champion\Champion;
 
-use App\Models\Match\Match;
-use App\Models\Match\Participant;
+use App\Models\Content\MatchParam;
+use App\Models\Content\Wins;
 
 class ChampionsController extends Controller
 {
@@ -19,23 +19,34 @@ class ChampionsController extends Controller
     public function show(Champion $champion) 
     {
         $champId = $champion->champId;
-        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';//?api_key='.env('RIOT_API_KEY');
+        $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';
         $indiv_champion = json_decode(file_get_contents($url))->data->$champId;
 
-        $match = Match::all();
+        $path = env('PATH_SEED_DATA');
+        $seedFile = fopen($path, 'r');
+        $seedData = fread($seedFile, filesize($path));
+        $matches_raw = array_unique(explode(PHP_EOL, $seedData));
 
-        return $match[0]->participant[0]->team;
+        $dataset_size = count($matches_raw);
 
+        $champion = MatchParam::where([
+            ['championKey', $champion->key], 
+            ['queueId', 420]
+        ])->first();
 
-        //$matches = Participant::select('gameId')->where('championId', $champion->key)->get();
+        $champion_wins = $champion->wins()->get()->first();
+        $wins = $champion_wins->wins;
+        $matches = $champion_wins->matches;
 
-        //$base_model = new BaseModel;
-        //$base_model->matches = count($matches);
+        //return $champion_wins;
 
-        //return (array)$matches[0]->stats();
+        $champion_stats = new BaseModel;
+        $champion_stats->win_rate = round(($wins/$matches)*100, 2);
+        $champion_stats->pick_rate = round(($matches/$dataset_size)*100, 2);
+        $champion_stats->matches = $matches;
 
         $skill_pattern = [0, 1, 2, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1];
 
-        return view('champions.show', compact('indiv_champion', 'base_model', 'skill_pattern'));
+        return view('champions.show', compact('indiv_champion', 'champion_stats', 'skill_pattern'));
     }
 }

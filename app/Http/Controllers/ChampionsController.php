@@ -8,6 +8,7 @@ use App\Models\Champion\Champion;
 
 use App\Models\Content\MatchParam;
 use App\Models\Content\Wins;
+use App\Models\Content\Meta;
 
 class ChampionsController extends Controller
 {
@@ -22,12 +23,7 @@ class ChampionsController extends Controller
         $url = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/data/en_US/champion/'.$champId.'.json';
         $indiv_champion = json_decode(file_get_contents($url))->data->$champId;
 
-        $path = env('PATH_SEED_DATA');
-        $seedFile = fopen($path, 'r');
-        $seedData = fread($seedFile, filesize($path));
-        $matches_raw = array_unique(explode(PHP_EOL, $seedData));
-
-        $dataset_size = count($matches_raw);
+        $dataset_size = Meta::first()->matches;
 
         $champion = MatchParam::where([
             ['championKey', $champion->key], 

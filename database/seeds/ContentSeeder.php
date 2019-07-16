@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Content\MatchParam;
 use App\Models\Content\Wins;
+use App\Models\Content\Meta;
 
 class ContentSeeder extends Seeder
 {
@@ -19,7 +20,13 @@ class ContentSeeder extends Seeder
         $seedData = fread($seedFile, filesize($path));
         $matches_raw = array_unique(explode(PHP_EOL, $seedData));
 
-        echo('Main Loop 1/2'.PHP_EOL);
+        $meta_row = [
+            'matches' => count($matches_raw),
+        ];
+
+        Meta::insert($meta_row);
+
+        echo('Main Loop 1/3'.PHP_EOL);
         $this->command->getOutput()->progressStart(count($matches_raw)*10);
 
         $match_param_pkey = [];

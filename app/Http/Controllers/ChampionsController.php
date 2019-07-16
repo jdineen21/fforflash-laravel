@@ -34,8 +34,6 @@ class ChampionsController extends Controller
         $wins = $champion_wins->wins;
         $matches = $champion_wins->matches;
 
-        //return $champion_wins;
-
         $champion_stats = new BaseModel;
         $champion_stats->win_rate = round(($wins/$matches)*100, 2);
         $champion_stats->pick_rate = round(($matches/$dataset_size)*100, 2);

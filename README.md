@@ -8,14 +8,16 @@
 
 4. Create .env file by filling out .env.example
 
-5. Run 'php artisan fresh:all'
+5. Run 'php artisan key:generate'
 
-6. Run 'php artisan db:seed'
+6. Run 'php artisan fresh:all'
 
-7. Run 'npm i'
+7. Run 'php artisan db:seed'
 
-8. Run 'npm run dev'
+8. Run 'npm i'
 
-9. Run 'php artisan serve' in one shell to run project
+9. Run 'npm run dev'
+
+10. Run 'php artisan serve' in one shell to run project
 
 Testing website up at jdineen.co.uk. (May not be available due to api key expiring every 24 hours)

@@ -19,6 +19,8 @@ Route::get('/champions', 'ChampionsController@index');
 
 Route::get('/champion/{champion}', 'ChampionsController@show');
 
+Route::get('/contact', 'ContactController@index');
+
 Route::get('/test', 'TestController@index');
 
 Route::get('/archive', 'ArchiveController@index');

@@ -14,7 +14,7 @@
                 <img src="/datadragon/img/perk-images/StatMods/StatModsMagicResIcon.png">
             </div>
             <p>Welcome to FForFlash. Here we analyse millions of games in order to provide up to date guides and statistics on the current League of Legends Meta!</p>
-            <p>You can search up individual champions to find statisically derived guides or go to our tier list to see the best champions this patch.</p>
+            <p>You can use the search bar to find statisically derived guides for individual champions or go to our tier list to see the best champions this patch.</p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a metus nulla. 
                 Etiam est arcu, vulputate a pretium suscipit, dictum id dolor. Nulla facilisi. 

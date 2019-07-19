@@ -5,48 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Content\MatchParam;
+use App\Models\Content\Meta;
+use App\Models\Content\Wins;
+
 use App\Models\Champion\Champion;
-use App\Models\Match\Match;
-use App\Models\Match\Participant;
-use App\Models\Match\Stats;
 
 class TierListController extends Controller
 {
     public function index() 
     {
-        $stats = Stats::all();
         $champions = Champion::all();
+        $dataset_size = Meta::first()->matches;
 
-        //return $champions;
+        $stats = [];
+        foreach ($champions as $champion) {
+            $match_param = MatchParam::where([
+                ['championKey', $champion->key], 
+                ['queueId', 420]
+            ])->first();
 
-        $tierData = [];
-        // foreach ($champions as $key => $value) {
-        //     $tierData[$value->key] = [];
-        //     $tierData[$value->key]['name'] = $value->name;
-        //     $tierData[$value->key]['wins'] = 0;
-        //     $tierData[$value->key]['games'] = 0;
-        // }
+            $champion_wins = $match_param->wins()->get()->first();
+            $wins = $champion_wins->wins;
+            $matches = $champion_wins->matches;
 
-        // foreach ($stats as $key => $value) {
-        //     $tierData[$value->participant->championId]['wins'] = $tierData[$value->participant->championId]['wins']+$value->win;
-        //     $tierData[$value->participant->championId]['games'] = $tierData[$value->participant->championId]['games']+1;
-        // }
+            $champion_stats = new BaseModel;
+            $champion_stats->champion = $champion;
+            $champion_stats->win_rate = round(($wins/$matches)*100, 2);
+            $champion_stats->pick_rate = round(($matches/$dataset_size)*100, 2);
+            $champion_stats->matches = $matches;
+            array_push($stats, $champion_stats);
+        }
 
-        // foreach ($tierData as $key => $value) {
-        //     $tierData[$key]['winrate'] = round($tierData[$key]['wins']/$tierData[$key]['games']*100, 2);
-        // }
+        usort($stats, function($a, $b) {
+            return $b['win_rate'] <=> $a['win_rate'];
+        });
 
-        //return $tierData;
-
-        // foreach ($match as $match => $matchData) {
-        //     foreach (Match::find($matchData->gameId)->participant as $part => $partData) {
-        //         $champ = Champion::where('key', $partData->championId)->first()->name;
-
-        //         $tierData[$champ]['wins'] = $tierData[$champ]['wins'] + Participant::find($partData->id)->stats->win;
-        //         $tierData[$champ]['games'] = $tierData[$champ]['games'] + 1;
-        //     }
-        // }
-
-        return view('tier.index', compact('tierData'));
+        return view('tier.index', compact('stats'));
     }
 }

@@ -14,34 +14,18 @@
                     <td>Matches</td>
                 </tr>
 
-                {{-- @foreach ($tierData as $row)
+                @foreach ($stats as $key => $stat)
 
                 <tr>
-                    <td>NA</td>
-                    <td>{{ $row }}</td>
-                    <td>54.98%</td>
-                    <td>1.3%</td>
+                    <td>{{ $key+1 }}</td>
+                    <td>{{ $stat->champion->name }}</td>
+                    <td>{{ $stat->win_rate }}%</td>
+                    <td>{{ $stat->pick_rate }}%</td>
                     <td>0.2%</td>
-                    <td>522</td>
+                    <td>{{ $stat->matches }}</td>
                 </tr>
 
-				@endforeach --}}
-                <tr>
-                    <td>1</td>
-                    <td>Skarner</td>
-                    <td>54.98%</td>
-                    <td>1.3%</td>
-                    <td>0.2%</td>
-                    <td>522</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Vi</td>
-                    <td>54.94%</td>
-                    <td>8.1%</td>
-                    <td>2.5%</td>
-                    <td>3278</td>
-                </tr>
+				@endforeach
             </table>
         </div>
     </div>

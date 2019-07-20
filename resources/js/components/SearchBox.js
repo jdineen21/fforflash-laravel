@@ -29,13 +29,17 @@ export default class SearchBox extends React.Component {
         if (e.keyCode === 38) {
             if (0 < this.state.select) {
                 this.setState({ select: this.state.select-=1 });
+                this.setState({ query: this.props.predicts[this.state.select].name });
                 this.props.onSelectChange(this.state.select);
+                e.preventDefault();
             }
         }
         if (e.keyCode === 40) {
             if (this.state.select < this.props.predicts.length-1) {
                 this.setState({ select: this.state.select+=1 });
+                this.setState({ query: this.props.predicts[this.state.select].name });
                 this.props.onSelectChange(this.state.select);
+                e.preventDefault();
             }
         }
     }

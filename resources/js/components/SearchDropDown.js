@@ -5,17 +5,13 @@ export default class SearchDropDown extends React.Component {
         super(props);
     }
 
-    handlePredicts() {
-        console.log(this.props.predicts);
-    }
-
     render() {
-        return this.props.predicts.map((todo) => (
-            <div className="dropdown_row">
-                <a href={"/champion/"+todo.key}>
+        return this.props.predicts.map((predict, index) => (
+            <div key={predict.key} className={(this.props.select === index) ? 'dropdown_row_select' : 'dropdown_row'}>
+                <a href={"/champion/"+predict.key}>
                     <div>
-                        <img src={"/datadragon/9.13.1/img/champion/"+todo.champId+".png"}/>
-                        <p>{ todo.name }</p>   
+                        <img src={"/datadragon/9.13.1/img/champion/"+predict.champId+".png"}/>
+                        <p>{ predict.name }</p>   
                     </div>       
                 </a>         
             </div> 

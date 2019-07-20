@@ -12,16 +12,23 @@ export default class SearchContainer extends React.Component {
             predicts: [],
         }
 
-        this.SearchBox = this.SearchBox.bind(this);
+        this.onQueryChange = this.onQueryChange.bind(this);
+        this.onSelectChange = this.onSelectChange.bind(this);
     }
 
-    SearchBox(query) {
+    onQueryChange(query) {
         const inputValue = query.trim().toLowerCase();
         const inputLength = query.length;
 
-        const predicts = inputLength === 0 ? []: this.state.data.filter(lang => lang.name.toLowerCase().slice(0, inputLength) === inputValue);
-        
+        const predicts = inputLength === 0 ? []: this.state.data.filter(data => data.name.toLowerCase().slice(0, inputLength) === inputValue);
+
+        predicts.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
         this.setState({ predicts: predicts });
+    }
+
+    onSelectChange(select) {
+        this.setState({ select: select });
     }
 
     componentDidMount() {
@@ -38,9 +45,16 @@ export default class SearchContainer extends React.Component {
     render() {
         return (
             <div className="searchbox_container">
-                <SearchBox SearchBox={this.SearchBox} />
+                <SearchBox 
+                    onQueryChange={this.onQueryChange}
+                    onSelectChange={this.onSelectChange}
+                    predicts={this.state.predicts}
+                />
                 <div className="dropdown_content">
-                    <SearchDropDown  predicts={this.state.predicts} />
+                    <SearchDropDown 
+                        predicts={this.state.predicts}
+                        select={this.state.select}
+                    />
                 </div>
             </div>
         )

@@ -1,25 +1,42 @@
 import React from 'react';
-import Autosuggest from 'react-autosuggest';
 
 export default class SearchBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: ''
+            query: '',
+            select: -1,
         };
-
         this.onChange = this.onChange.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
     
     onChange(e) {
         this.setState({ query: e.target.value });
-        this.props.SearchBox(e.target.value);
-    } 
+        this.setState({ select: -1 });
+        this.props.onQueryChange(e.target.value);
+    }
 
     handleKeyDown(e) {
         if (e.key === 'Enter') {
-            console.log('do validate');
+            if (this.state.select === -1) {
+                window.location = "/champion/"+this.props.predicts[0].key;
+            }
+            else {
+                window.location = "/champion/"+this.props.predicts[this.state.select].key;
+            }
+        }
+        if (e.keyCode === 38) {
+            if (0 < this.state.select) {
+                this.setState({ select: this.state.select-=1 });
+                this.props.onSelectChange(this.state.select);
+            }
+        }
+        if (e.keyCode === 40) {
+            if (this.state.select < this.props.predicts.length-1) {
+                this.setState({ select: this.state.select+=1 });
+                this.props.onSelectChange(this.state.select);
+            }
         }
     }
 

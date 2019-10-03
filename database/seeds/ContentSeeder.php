@@ -15,10 +15,15 @@ class ContentSeeder extends Seeder
      */
     public function run()
     {
-        $path = env('PATH_SEED_DATA');
+        $path = env('PATH_MATCH_SEED');
         $seedFile = fopen($path, 'r');
         $seedData = fread($seedFile, filesize($path));
         $matches_raw = array_unique(explode(PHP_EOL, $seedData));
+
+        $path = env('PATH_TIMELINE_SEED');
+        $seedFile = fopen($path, 'r');
+        $seedData = fread($seedFile, filesize($path));
+        $timeline_raw = array_unique(explode(PHP_EOL, $seedData));
 
         $meta_row = [
             'matches' => count($matches_raw),

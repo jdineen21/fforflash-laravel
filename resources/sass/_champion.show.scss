@@ -54,18 +54,16 @@
 }
 
 .champion_skills {
-    margin-top: 3em;
+    margin-top: 2em;
     display: inline-block;
     img {
         box-sizing: border-box;
         height: 37px;
     }
-    .champion_passive_row {
-
-    }
-    .champion_skill_row {
-        margin-bottom: -8px;
-        div {
+    .champion_spell_row {
+        margin: 0.1em 0;
+        padding: 0;
+        li {
             box-sizing: border-box;
             background: #132138;
             height: 37px;
@@ -74,13 +72,17 @@
             text-align: center;
         }
         .champion_skill_data_active {
-            position: relative;
-            bottom: 13px;
             background: #3175a8;
-            font-weight: 600;
-            color: #ffffff;
-            padding-top: 8px;
-            bottom: 12px;
+            p {
+                margin: 0;
+                height: 37px;
+                width: 37px;
+                line-height: 37px;
+                float: left;
+                text-align: center;
+                font-weight: 600;
+                color: #ffffff;
+            }
         }
     }
 }

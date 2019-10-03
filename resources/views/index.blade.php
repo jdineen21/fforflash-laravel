@@ -32,7 +32,7 @@
                 justo est quis felis.
             </p>
         </div>
-        <img class="logo" src="css/images/logo.png">
+        <img class="logo" src="assets/fforflash-01.png">
     </div>
     <div class="champion_info">
         <h3>New Champion Information</h3>
